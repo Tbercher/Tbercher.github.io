@@ -1,0 +1,52 @@
+/* 1. Different background feel: darker and more academic */
+body {
+  background-color: #e8eee8;
+  color: #1a3c1a;
+  font-family: "Lora", serif; /* DIFFERENT: Serif for body */
+}
+
+/* 2. Full-width colored header */
+header {
+  background-color: #013220;
+  color: #ffffff;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* 3. Content Card Style */
+main {
+  max-width: 850px; /* DIFFERENT: slightly narrower */
+  margin: 2rem auto;
+  background: white;
+  padding: 3rem;
+  border: 1px solid #c2cdc2; /* 4. Structural Border */
+}
+
+/* 5. Nav Variation: Left Aligned */
+nav ul {
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+  background: #228b22;
+  padding-left: 1rem;
+}
+
+nav li {
+  margin-right: 20px; /* 6. Spacing difference */
+}
+
+/* 7. Stylized Course List */
+ul li {
+  border-left: 4px solid #228b22; /* 8. Decorative accent */
+  padding-left: 10px;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+/* 9. Heading Style: Bold Sans-Serif */
+h1,
+h2 {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
