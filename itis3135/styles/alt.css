@@ -1,52 +1,76 @@
-/* 1. Different background feel: darker and more academic */
 body {
-  background-color: #e8eee8;
-  color: #1a3c1a;
-  font-family: "Lora", serif; /* DIFFERENT: Serif for body */
+  background-color: #ffffff;
+  margin: 0px;
 }
-
-/* 2. Full-width colored header */
-header {
-  background-color: #013220;
+main {
+  margin: 0;
+  max-width: 900px;
+}
+h1 {
+  text-align: center;
+  color: #2d4654;
+  font-family: "Montserrat", "Times New Roman";
+}
+h2 {
+  color: #2d4654;
+  font-family: "Montserrat", "Times New Roman";
+}
+figure {
+}
+figcaption {
+  color: #2d4654;
+  font-family: "Inter", "Times New Roman";
+}
+p {
+  color: #2d4654;
+  font-family: "Inter", "Times New Roman";
+}
+.navbar ul {
+  list-style: none;
+  background-color: #2d4654;
+  font-family: "Inter", "Times New Roman";
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+.navbar a {
   color: #ffffff;
-  padding: 2rem 0;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
   text-align: center;
 }
-
-/* 3. Content Card Style */
-main {
-  max-width: 850px; /* DIFFERENT: slightly narrower */
-  margin: 2rem auto;
-  background: white;
-  padding: 3rem;
-  border: 1px solid #c2cdc2; /* 4. Structural Border */
+.navbar a:hover {
+  background-color: #000000;
 }
-
-/* 5. Nav Variation: Left Aligned */
-nav ul {
-  display: flex;
-  justify-content: flex-start;
+.navbar li {
+  float: left;
+}
+.contactbar {
+  position: sticky;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+.contactbar ul {
   list-style: none;
-  background: #228b22;
-  padding-left: 1rem;
-}
+  background-color: #2d4654;
+  font-family: "Inter", "Times New Roman";
+  padding: 0px;
+  margin: 0px;
 
-nav li {
-  margin-right: 20px; /* 6. Spacing difference */
+  overflow: hidden;
 }
-
-/* 7. Stylized Course List */
-ul li {
-  border-left: 4px solid #228b22; /* 8. Decorative accent */
-  padding-left: 10px;
-  margin-bottom: 10px;
-  list-style: none;
+.contactbar a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
 }
-
-/* 9. Heading Style: Bold Sans-Serif */
-h1,
-h2 {
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.contactbar a:hover {
+  background-color: #000000;
+}
+.contactbar li {
+  float: left;
 }
