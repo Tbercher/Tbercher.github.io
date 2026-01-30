@@ -1,40 +1,62 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 /*Used to set the margins to 0 and maintain overall page backgroun*/
 body {
   background-color: #ffffff;
   margin: 0px;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 /*Used to set the max width and margin*/
 main {
   margin: 0;
   max-width: 900px;
+  margin-left: 20%;
+  margin-right: 20%;
+  flex-grow: 1;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 /*Used to center heading 1 text and change color and font*/
 h1 {
   text-align: center;
-  color: #2d4654;
-  font-family: "Montserrat", "Times New Roman";
+  margin-bottom: 10px;
+  color: #363636;
+  font-family: "Libre Baskerville", "Times New Roman";
 }
 /*Used to center heading 2 text and change color and font*/
 h2 {
-  color: #2d4654;
-  font-family: "Montserrat", "Times New Roman";
+  color: #363636;
+  font-family: "Libre Baskerville", "Times New Roman";
+}
+h3 {
+  color: #363636;
+  font-family: "Libre Baskerville", "Times New Roman";
 }
 /*Used to center p text and change color and font*/
 p {
-  color: #2d4654;
-  font-family: "Inter", "Times New Roman";
+  color: #363636;
+  font-family: "Lato", "Times New Roman";
 }
+
 /*Set background color for navbar and decides the font also fixes the orientation*/
-.navbar ul {
+header nav ul {
   list-style: none;
-  background-color: #2d4654;
-  font-family: "Inter", "Times New Roman";
+  background-color: #363636;
+  font-family: "Lato", "Times New Roman";
   padding: 0px;
   margin: 0px;
   overflow: hidden;
 }
 /*Used to change text color on the nav bar*/
-.navbar a {
+header nav a {
   color: #ffffff;
   text-decoration: none;
   padding: 15px;
@@ -42,39 +64,53 @@ p {
   text-align: center;
 }
 /*When hovering over selectable items the elements color changes indicating selectability*/
-.navbar a:hover {
+header nav a:hover {
   background-color: #000000;
 }
-.navbar li {
+header nav li {
   float: left;
+}
+figcaption {
+  color: #363636;
+  font-family: "Lato", "Times New Roman";
+  font-weight: bold;
+  margin-top: 0px;
 }
 /*Same as navbar above but for the contact bar
 the contact bar is fixed to the bottom but besides that it is essentially the same as the nav bar*/
-.contactbar {
-  position: sticky;
+ul {
+  color: #363636;
+  font-family: "Lato", "Times New Roman";
+}
+blockquote {
+  color: #363636;
+  font-family: "Lato", "Times New Roman";
+}
+footer nav {
+  /*position: fixed;*/
   bottom: 0px;
   left: 0px;
   width: 100%;
 }
-.contactbar ul {
+footer nav ul {
   list-style: none;
-  background-color: #2d4654;
-  font-family: "Inter", "Times New Roman";
+  background-color: #363636;
+  font-family: "Lato", "Times New Roman";
   padding: 0px;
   margin: 0px;
 
   overflow: hidden;
 }
-.contactbar a {
+footer nav a {
   color: #ffffff;
   text-decoration: none;
   padding: 15px;
   display: block;
   text-align: center;
 }
-.contactbar a:hover {
+footer nav a:hover {
   background-color: #000000;
 }
-.contactbar li {
+footer nav li {
   float: left;
 }
