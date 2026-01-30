@@ -1,30 +1,30 @@
+/*Used to set the margins to 0 and maintain overall page backgroun*/
 body {
   background-color: #ffffff;
   margin: 0px;
 }
+/*Used to set the max width and margin*/
 main {
   margin: 0;
   max-width: 900px;
 }
+/*Used to center heading 1 text and change color and font*/
 h1 {
   text-align: center;
   color: #2d4654;
   font-family: "Montserrat", "Times New Roman";
 }
+/*Used to center heading 2 text and change color and font*/
 h2 {
   color: #2d4654;
   font-family: "Montserrat", "Times New Roman";
 }
-figure {
-}
-figcaption {
-  color: #2d4654;
-  font-family: "Inter", "Times New Roman";
-}
+/*Used to center p text and change color and font*/
 p {
   color: #2d4654;
   font-family: "Inter", "Times New Roman";
 }
+/*Set background color for navbar and decides the font also fixes the orientation*/
 .navbar ul {
   list-style: none;
   background-color: #2d4654;
@@ -33,6 +33,7 @@ p {
   margin: 0px;
   overflow: hidden;
 }
+/*Used to change text color on the nav bar*/
 .navbar a {
   color: #ffffff;
   text-decoration: none;
@@ -40,12 +41,15 @@ p {
   display: block;
   text-align: center;
 }
+/*When hovering over selectable items the elements color changes indicating selectability*/
 .navbar a:hover {
   background-color: #000000;
 }
 .navbar li {
   float: left;
 }
+/*Same as navbar above but for the contact bar
+the contact bar is fixed to the bottom but besides that it is essentially the same as the nav bar*/
 .contactbar {
   position: sticky;
   bottom: 0px;
