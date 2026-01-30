@@ -1,64 +1,70 @@
-/* default.css */
-
-/* 1. Set the overall page background and base font */
 body {
-  background-color: #f0f4f0; /* Light minty grey for low eye strain */
-  color: #013220; /* 2. Forest Green for main text */
-  font-family: "Roboto", sans-serif; /* 3. Sans-serif for body */
-
-  /* 4. Layout: Centering the container without centering text */
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem;
+  background-color: #ffffff;
+  margin: 0px;
 }
-
-/* 5. Stylized Headings */
-h1,
-h2,
-h3 {
-  font-family: "Playfair Display", serif; /* 6. Serif for big text */
-  color: #228b22; /* Forest Green variation */
-  border-bottom: 2px solid #228b22; /* 7. Adding a structural line */
-}
-
-/* 8. Styling the footer/header differently */
-footer {
-  background-color: #013220; /* Dark forest green */
-  color: white; /* Contrast for readability */
-  padding: 1rem;
-  margin-top: 2rem;
-}
-
-/* 9. Navigation Links */
-a {
-  color: #2e8b57; /* Sea Green for links */
-  font-weight: bold;
-}
-/* Remove default list styling (bullets and indentation) */
-nav ul {
-  list-style-type: none; /* 1. Removes the bullets */
-  padding: 0;
+main {
   margin: 0;
-  display: flex; /* 2. Aligns items horizontally */
-  background-color: #013220; /* 3. Deep Forest Green background */
-  justify-content: space-around; /* 4. Spreads links evenly */
+  max-width: 900px;
 }
-
-/* Style the individual list items */
-nav li {
-  padding: 1rem; /* 5. Gives the links "hit area" */
+h1 {
+  text-align: center;
+  color: #2d4654;
+  font-family: "Montserrat", "Times New Roman";
 }
-
-/* Style the links inside the nav */
-nav a {
-  color: #f0f4f0; /* 6. High contrast white text */
-  text-decoration: none; /* 7. Removes the standard underline */
-  font-weight: bold;
-  text-transform: uppercase; /* Optional: makes it look more "nav-like" */
+h2 {
+  color: #2d4654;
+  font-family: "Montserrat", "Times New Roman";
 }
+p {
+  color: #2d4654;
+  font-family: "Inter", "Times New Roman";
+}
+.navbar ul {
+  list-style: none;
+  background-color: #2d4654;
+  font-family: "Inter", "Times New Roman";
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
+}
+.navbar a:hover {
+  background-color: #000000;
+}
+.navbar li {
+  float: left;
+}
+.contactbar {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+.contactbar ul {
+  list-style: none;
+  background-color: #2d4654;
+  font-family: "Inter", "Times New Roman";
+  padding: 0px;
+  margin: 0px;
 
-/* Add a hover effect for better user experience */
-nav a:hover {
-  color: #90ee90; /* Light green on hover */
-  text-decoration: underline;
+  overflow: hidden;
+}
+.contactbar a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
+}
+.contactbar a:hover {
+  background-color: #000000;
+}
+.contactbar li {
+  float: left;
 }
