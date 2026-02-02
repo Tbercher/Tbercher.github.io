@@ -72,6 +72,7 @@ header nav li {
 }
 figcaption {
   color: #2d4654;
+  font-style: italic;
   font-family: "Inter", "Times New Roman";
   font-weight: bold;
   margin-top: 0px;
