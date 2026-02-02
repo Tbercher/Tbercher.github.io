@@ -89,6 +89,7 @@ ol {
 }
 blockquote {
   color: #2d4654;
+  font-style: italic;
   font-family: "Inter", "Times New Roman";
 }
 footer nav {
