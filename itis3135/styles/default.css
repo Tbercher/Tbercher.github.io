@@ -93,6 +93,90 @@ p {
   color: red;
 }
 /* end of playing card styling*/
+
+/* Styling the Survey Form Container */
+form {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+/* Ensure labels and main inputs stay on their own lines */
+label {
+  display: block;
+  font-family: "Lato", "Times New Roman";
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #363636;
+}
+
+/* Styling Text Inputs, Dropdowns, and Textareas */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  display: block;
+  width: auto;
+  min-width: 100%;
+  padding: 12px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: "Lato", "Arial", sans-serif;
+  font-size: 1rem;
+}
+
+/* Specific fix for Radio and Checkbox alignment */
+
+input[type="radio"],
+input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Inline labels for radio/checkbox groups */
+form label {
+  margin-bottom: 10px;
+}
+
+/* Questions within the form (p tags) */
+form p {
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Submit Button Styling */
+#submit {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #363636;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+#submit:hover {
+  background-color: #000000;
+}
+
+/* Textarea height adjustment */
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/*End of survery form styling */
 /*Set background color for navbar and decides the font also fixes the orientation*/
 header nav ul {
   list-style: none;
