@@ -45,7 +45,54 @@ p {
   color: #363636;
   font-family: "Lato", "Times New Roman";
 }
+#playing-cards {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+/* Start of playing card styling*/
+.card {
+  display: flex;
+  justify-content: space-between;
+  min-width: 250px;
+  max-width: 250px;
+  height: 350px;
+  font-size: 30px;
+  background-color: white;
+  border: 1px solid black;
+  padding: 5px;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 2px gray;
+  border-radius: 10px;
+}
 
+.left {
+  align-self: flex-start;
+  font-weight: bold;
+}
+
+.middle {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 80px;
+}
+
+.right {
+  align-self: flex-end;
+  font-weight: bold;
+}
+
+.flipped {
+  transform: rotate(180deg);
+}
+
+.red {
+  color: red;
+}
+/* end of playing card styling*/
 /*Set background color for navbar and decides the font also fixes the orientation*/
 header nav ul {
   list-style: none;
