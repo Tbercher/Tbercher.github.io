@@ -45,6 +45,7 @@ p {
   color: #363636;
   font-family: "Lato", "Times New Roman";
 }
+/* Start of playing card styling*/
 #playing-cards {
   margin-top: 100px;
   display: flex;
@@ -52,7 +53,6 @@ p {
   flex-wrap: wrap;
   gap: 20px;
 }
-/* Start of playing card styling*/
 .card {
   display: flex;
   justify-content: space-between;
@@ -95,6 +95,17 @@ p {
 /* end of playing card styling*/
 
 /* Styling the Survey Form Container */
+fieldset {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-family: "Lato", "Times New Roman";
+  color: #363636;
+}
+legend {
+  font-weight: bold;
+  padding: 0 5px;
+}
 form {
   background: #ffffff;
   padding: 2.5rem;
