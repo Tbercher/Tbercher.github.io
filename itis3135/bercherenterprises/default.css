@@ -59,6 +59,9 @@ ul li::before {
   left: 0;
   font-size: 1.2rem;
 }
+ul li strong {
+  color: #162b48;
+}
 
 /* Nicely formatted contact section */
 section {
@@ -67,8 +70,10 @@ section {
   padding: 20px;
   margin-top: 40px;
 }
-
-section h3 {
+p strong {
+  color: #162b48;
+}
+h3 {
   margin-top: 0;
   color: #162b48;
 }
