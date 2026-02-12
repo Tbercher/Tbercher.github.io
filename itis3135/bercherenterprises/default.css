@@ -1,0 +1,87 @@
+body {
+  background-color: #ffffff;
+  color: #333333;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #162b48; /* Deep Navy from logo */
+  color: #ffffff;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 5px solid #5c88b0;
+}
+
+header img {
+  margin-right: 20px;
+  height: 60px; /* Adjust based on your logo size */
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h2 {
+  color: #162b48;
+  border-bottom: 2px solid #a7c5db;
+  padding-bottom: 5px;
+}
+
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Unordered list with non-standard bullet style */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  padding: 10px 0;
+  padding-left: 35px;
+  position: relative;
+}
+
+ul li::before {
+  content: "✦"; /* Custom character bullet */
+  color: #5c88b0;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+}
+
+/* Nicely formatted contact section */
+section {
+  background-color: #f4f7f9;
+  border-left: 10px solid #162b48;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+h3 {
+  margin-top: 0;
+  color: #162b48;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #666;
+  background-color: #eeeeee;
+  margin-top: 60px;
+}
+
+footer p {
+  margin: 5px 0;
+}
