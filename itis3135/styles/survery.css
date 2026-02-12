@@ -176,6 +176,15 @@ blockquote {
   color: #363636;
   font-family: "Lato", "Times New Roman";
 }
+legend {
+  color: #363636;
+  font-family: "Lato", "Times New Roman";
+}
+#dropdown {
+  color: #363636;
+  font-family: "Lato", "Times New Roman";
+}
+
 footer nav {
   /*position: fixed;*/
   bottom: 0px;
