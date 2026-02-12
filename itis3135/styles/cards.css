@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*Used to set the margins to 0 and maintain overall page backgroun*/
+body {
+  background-color: #f4f4f4;
+  margin: 0px;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+/*Used to set the max width and margin*/
+main {
+  margin: 0;
+  max-width: 900px;
+  margin-left: 20%;
+  margin-right: 20%;
+  flex-grow: 1;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+/*Used to center heading 1 text and change color and font*/
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #363636;
+  font-family: "Libre Baskerville", "Times New Roman";
+}
+/*Used to center heading 2 text and change color and font*/
+h2 {
+  color: #363636;
+  font-family: "Libre Baskerville", "Times New Roman";
+}
+h3 {
+  color: #363636;
+  font-family: "Libre Baskerville", "Times New Roman";
+}
+/*Used to center p text and change color and font*/
+p {
+  color: #363636;
+  font-family: "Lato", "Times New Roman";
+}
+#playing-cards {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+/* Start of playing card styling*/
+.card {
+  display: flex;
+  justify-content: space-between;
+  min-width: 250px;
+  max-width: 250px;
+  height: 350px;
+  font-size: 30px;
+  background-color: white;
+  border: 1px solid black;
+  padding: 5px;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 2px gray;
+  border-radius: 10px;
+}
+
+.left {
+  align-self: flex-start;
+  font-weight: bold;
+}
+
+.middle {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 80px;
+}
+
+.right {
+  align-self: flex-end;
+  font-weight: bold;
+}
+
+.flipped {
+  transform: rotate(180deg);
+}
+
+.red {
+  color: red;
+}
+/* end of playing card styling*/
+
+/*Set background color for navbar and decides the font also fixes the orientation*/
+header nav ul {
+  list-style: none;
+  background-color: #363636;
+  font-family: "Lato", "Times New Roman";
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+/*Used to change text color on the nav bar*/
+header nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
+}
+/*When hovering over selectable items the elements color changes indicating selectability*/
+header nav a:hover {
+  background-color: #000000;
+}
+header nav li {
+  float: left;
+}
+figcaption {
+  color: #363636;
+  font-family: "Lato", "Times New Roman";
+  font-weight: bold;
+  margin-top: 0px;
+}
+/*Same as navbar above but for the contact bar
+the contact bar is fixed to the bottom but besides that it is essentially the same as the nav bar*/
+ul {
+  color: #363636;
+  font-family: "Lato", "Times New Roman";
+}
+blockquote {
+  color: #363636;
+  font-family: "Lato", "Times New Roman";
+}
+footer nav {
+  /*position: fixed;*/
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+footer nav ul {
+  list-style: none;
+  background-color: #363636;
+  font-family: "Lato", "Times New Roman";
+  padding: 0px;
+  margin: 0px;
+
+  overflow: hidden;
+}
+footer nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
+}
+footer nav a:hover {
+  background-color: #000000;
+}
+footer nav li {
+  float: left;
+}
