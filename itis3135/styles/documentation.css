@@ -1,6 +1,3 @@
-/* =========================================
-   1. GLOBAL RESET & BASE STYLES (Original)
-   ========================================= */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,20 +9,17 @@ html {
 }
 
 body {
-  background-color: #f4f4f4; /* Original Background */
+  background-color: #f4f4f4;
   margin: 0;
   min-height: 100vh;
   width: 100vw;
   display: flex;
-  flex-direction: column; /* Keeps Header/Footer vertical */
+  flex-direction: column;
   overflow-x: hidden;
   font-family: "Lato", "Times New Roman", sans-serif;
   color: #363636;
 }
 
-/* =========================================
-   2. TYPOGRAPHY (Original)
-   ========================================= */
 h2,
 h3,
 header {
@@ -45,24 +39,15 @@ p {
   line-height: 1.6;
 }
 
-/* =========================================
-   3. LAYOUT WRAPPERS (New Integration)
-   ========================================= */
-/* This wrapper holds the Sidebar and Main Content side-by-side
-   on desktop, but stays between the Header and Footer.
-*/
 .page-wrapper {
   display: flex;
-  flex-direction: column; /* Mobile first: Stacked */
+  flex-direction: column;
   flex-grow: 1;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* =========================================
-   4. SIDE NAVBAR (#navbar) (New Logic + Original Colors)
-   ========================================= */
 #navbar {
   background-color: #ffffff;
   border-bottom: 2px solid #363636;
@@ -81,7 +66,7 @@ p {
 #navbar ul {
   list-style: none;
   padding: 0;
-  height: 200px; /* Scrollable on mobile if needed */
+  height: 200px;
   overflow-y: auto;
 }
 
@@ -100,12 +85,9 @@ p {
 
 #navbar a:hover {
   background-color: #e0e0e0;
-  padding-left: 20px; /* Slight indent effect */
+  padding-left: 20px;
 }
 
-/* =========================================
-   5. MAIN CONTENT (#main-doc) (Merged)
-   ========================================= */
 #main-doc {
   padding: 20px;
   background-color: #f4f4f4;
@@ -126,17 +108,14 @@ section header {
   padding-bottom: 5px;
 }
 
-/* =========================================
-   6. CODE BLOCKS & IMAGES (New)
-   ========================================= */
 code {
   display: block;
   text-align: left;
-  white-space: pre-wrap; /* improved wrapping */
+  white-space: pre-wrap;
   word-break: normal;
   word-wrap: normal;
   line-height: 1.5;
-  background-color: #2d2d2d; /* Dark theme for code contrast */
+  background-color: #2d2d2d;
   color: #f8f8f2;
   padding: 15px;
   margin: 10px 0;
@@ -157,11 +136,6 @@ ol {
   margin-bottom: 20px;
 }
 
-/* =========================================
-   7. GLOBAL NAVIGATION BARS (Corrected)
-   ========================================= */
-
-/* Select the UL within both header and footer navs */
 header nav ul,
 footer nav ul {
   list-style-type: none;
@@ -169,62 +143,50 @@ footer nav ul {
   padding: 0;
   background-color: #363636;
 
-  /* This forces the list items to be horizontal */
   display: flex;
   flex-direction: row;
-  justify-content: flex-start; /* Aligns items to the left. Change to 'center' if you want them centered. */
-  flex-wrap: wrap; /* Allows wrapping on very small screens without breaking */
+  justify-content: flex-start;
 }
 
-/* Select the List Items */
 header nav li,
 footer nav li {
-  /* No width set here, so they won't fill the page */
 }
 
-/* Select the Links inside the items */
 header nav li a,
 footer nav li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 15px 20px; /* Adjust padding for button size */
+  padding: 15px 20px;
   text-decoration: none;
   font-family: "Lato", "Times New Roman", sans-serif;
   transition: background-color 0.3s;
 }
 
-/* Hover effects */
 header nav li a:hover,
 footer nav li a:hover {
   background-color: #000000;
 }
 
-/* Fix for the footer specifically to keep it at the bottom */
 footer {
   margin-top: auto;
   width: 100%;
 }
 
-/* =========================================
-   8. DESKTOP RESPONSIVE LAYOUT (The "New CSS" Logic)
-   ========================================= */
 @media only screen and (min-width: 815px) {
-  /* Switch wrapper to Row */
   .page-wrapper {
     flex-direction: row;
     align-items: flex-start;
     padding-top: 20px;
   }
 
-  /* Side Navbar becomes a sidebar */
   #navbar {
     box-sizing: border-box;
     width: 300px;
-    position: sticky; /* Sticks while scrolling */
+    position: sticky;
     top: 20px;
     height: auto;
-    max-height: 80vh; /* Prevent overflowing viewport */
+    max-height: 80vh;
     overflow-y: auto;
     border-right: 1px solid #ccc;
     border-bottom: none;
@@ -232,29 +194,30 @@ footer {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     margin-right: 20px;
   }
-  #navbar h2 {
+  .navtitle {
     text-align: center;
     margin: 0;
-    padding: 15px 0; /* Adds top/bottom space */
-    width: 100%; /* Ensures it spans the full width of the sidebar */
-    border-radius: 0 8px 0 0; /* Optional: Matches the sidebar's top-right rounded corner */
-    border-bottom: 1px solid #ccc; /* Light grey line */
+    padding: 15px 0;
+    width: 100%;
+    border-radius: 0 8px 0 0;
+    border-bottom: 1px solid #ccc;
+    background-color: #363636;
+    color: #ffffff;
+    font-family: "Libre Baskerville", serif;
+    font-size: 1.5rem;
   }
 
   #navbar ul {
-    height: auto; /* Full height on desktop */
+    height: auto;
     border-top: 1px solid #ccc;
     list-style: none;
     padding: 0;
     margin: 0;
-    /* This creates the line divider on top of the first link */
   }
   #navbar li {
-    /* The Line Divider */
-    border-bottom: 2px solid #ccc; /* Matches the header line */
+    border-bottom: 2px solid #ccc;
   }
 
-  /* Main Content takes remaining space */
   #main-doc {
     flex-grow: 1;
     padding: 0 20px;
