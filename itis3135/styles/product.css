@@ -1,0 +1,297 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*Used to set the margins to 0 and maintain overall page backgroun*/
+body {
+  background-color: #f4f4f4;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+/*Used to set the max width and margin*/
+main {
+  margin: 0;
+  max-width: 900px;
+  margin-left: 20%;
+  margin-right: 20%;
+  flex-grow: 1;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+/*Used to center heading 1 text and change color and font*/
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #363636;
+  font-family: "Libre Baskerville", "Times New Roman";
+}
+/*Used to center heading 2 text and change color and font*/
+h2 {
+  color: #363636;
+  font-family: "Libre Baskerville", "Times New Roman";
+}
+h3 {
+  color: #363636;
+  font-family: "Libre Baskerville", "Times New Roman";
+}
+/*Used to center p text and change color and font*/
+p {
+  color: #363636;
+  font-family: "Lato", "Times New Roman";
+}
+
+/*Set background color for navbar and decides the font also fixes the orientation*/
+header nav ul {
+  list-style: none;
+  background-color: #363636;
+  font-family: "Lato", "Times New Roman";
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+/*Used to change text color on the nav bar*/
+header nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
+}
+/*When hovering over selectable items the elements color changes indicating selectability*/
+header nav a:hover {
+  background-color: #000000;
+}
+header nav li {
+  float: left;
+}
+figcaption {
+  color: #363636;
+  font-family: "Lato", "Times New Roman";
+  font-weight: bold;
+  margin-top: 0px;
+}
+/*Same as navbar above but for the contact bar
+the contact bar is fixed to the bottom but besides that it is essentially the same as the nav bar*/
+ul {
+  color: #363636;
+  font-family: "Lato", "Times New Roman";
+}
+blockquote {
+  color: #363636;
+  font-family: "Lato", "Times New Roman";
+}
+footer nav {
+  /*position: fixed;*/
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+footer nav ul {
+  list-style: none;
+  background-color: #363636;
+  font-family: "Lato", "Times New Roman";
+  padding: 0px;
+  margin: 0px;
+
+  overflow: hidden;
+}
+footer nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
+}
+footer nav a:hover {
+  background-color: #000000;
+}
+footer nav li {
+  float: left;
+}
+#nav-bar {
+  width: 100%;
+}
+
+#nav-bar ul {
+  display: flex;
+  list-style: none;
+  background-color: #363636;
+}
+
+#nav-bar a {
+  color: white;
+  text-decoration: none;
+  padding: 15px 20px;
+  display: block;
+}
+
+#nav-bar a:hover {
+  background-color: black;
+}
+#hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 200px;
+  margin-top: 50px;
+  font-family: "Lato", "Times New Roman";
+}
+
+#hero input[type="email"] {
+  max-width: 275px;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+#hero input[type="submit"] {
+  max-width: 150px;
+  width: 100%;
+  height: 30px;
+  margin: 15px 0;
+  border: 0;
+  background-color: #363636;
+  color: #f4f4f4;
+  font-family: "Lato", "Times New Roman";
+}
+
+#hero input[type="submit"]:hover {
+  background-color: black;
+  transition: background-color 1s;
+}
+
+#features {
+  margin-top: 30px;
+}
+
+#features .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 125px;
+  width: 20vw;
+  color: darkorange;
+}
+
+@media (max-width: 550px) {
+  #features .icon {
+    display: none;
+  }
+}
+
+#features .desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 125px;
+  width: 80vw;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 550px) {
+  #features .desc {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    height: 150px;
+  }
+}
+
+@media (max-width: 650px) {
+  #features {
+    margin-top: 0;
+  }
+}
+#how-it-works {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+#how-it-works > iframe {
+  max-width: 560px;
+  width: 100%;
+}
+
+#pricing {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.hidden {
+  position: absolute;
+  left: -9999px;
+}
+/*stuff */
+#pricing {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: calc(100% / 3);
+  margin: 10px;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+
+.product > .level {
+  background-color: #ddd;
+  color: black;
+  padding: 15px 0;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.product > ol {
+  margin: 15px 0;
+}
+
+.product > ol > li {
+  padding: 5px 0;
+}
+
+.product > button {
+  border: 0;
+  padding: 10px 20px; /* Added padding */
+  margin: 15px 0;
+  background-color: #f1c40f;
+  font-weight: 700;
+  cursor: pointer; /* Makes it look clickable */
+  border-radius: 5px;
+}
+
+.product > button:hover {
+  background-color: orange;
+  transition: background-color 1s;
+}
+
+@media (max-width: 800px) {
+  #pricing {
+    flex-direction: column;
+  }
+  .product {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+}
