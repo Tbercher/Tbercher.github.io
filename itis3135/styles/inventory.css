@@ -1,0 +1,328 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*Used to set the margins to 0 and maintain overall page backgroun*/
+body {
+  background-color: #f4f4f4;
+  margin: 0px;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+/*Used to set the max width and margin*/
+main {
+  margin: 0;
+  max-width: 900px;
+  margin-left: 20%;
+  margin-right: 20%;
+  flex-grow: 1;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+/*Used to center heading 1 text and change color and font*/
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #363636;
+  font-family: "Libre Baskerville", "Times New Roman";
+}
+/*Used to center heading 2 text and change color and font*/
+h2 {
+  color: #363636;
+  font-family: "Libre Baskerville", "Times New Roman";
+}
+h3 {
+  color: #363636;
+  font-family: "Libre Baskerville", "Times New Roman";
+}
+/*Used to center p text and change color and font*/
+p {
+  color: #363636;
+  font-family: "Lato", "Times New Roman";
+}
+/* Start of playing card styling*/
+#playing-cards {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.card {
+  display: flex;
+  justify-content: space-between;
+  min-width: 250px;
+  max-width: 250px;
+  height: 350px;
+  font-size: 30px;
+  background-color: white;
+  border: 1px solid black;
+  padding: 5px;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 2px gray;
+  border-radius: 10px;
+}
+
+.left {
+  align-self: flex-start;
+  font-weight: bold;
+}
+
+.middle {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 80px;
+}
+
+.right {
+  align-self: flex-end;
+  font-weight: bold;
+}
+
+.flipped {
+  transform: rotate(180deg);
+}
+
+.red {
+  color: red;
+}
+/* end of playing card styling*/
+
+/* Styling the Survey Form Container */
+fieldset {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-family: "Lato", "Times New Roman";
+  color: #363636;
+}
+legend {
+  font-weight: bold;
+  padding: 0 5px;
+}
+form {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+/* Ensure labels and main inputs stay on their own lines */
+label {
+  display: block;
+  font-family: "Lato", "Times New Roman";
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #363636;
+}
+
+/* Styling Text Inputs, Dropdowns, and Textareas */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  display: block;
+  width: auto;
+  min-width: 100%;
+  padding: 12px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: "Lato", "Arial", sans-serif;
+  font-size: 1rem;
+}
+
+/* Specific fix for Radio and Checkbox alignment */
+
+input[type="radio"],
+input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Inline labels for radio/checkbox groups */
+form label {
+  margin-bottom: 10px;
+}
+
+/* Questions within the form (p tags) */
+form p {
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Submit Button Styling */
+#submit {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #363636;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+#submit:hover {
+  background-color: #000000;
+}
+
+/* Textarea height adjustment */
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/*End of survery form styling */
+/*Set background color for navbar and decides the font also fixes the orientation*/
+header nav ul {
+  list-style: none;
+  background-color: #363636;
+  font-family: "Lato", "Times New Roman";
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+/*Used to change text color on the nav bar*/
+header nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
+}
+/*When hovering over selectable items the elements color changes indicating selectability*/
+header nav a:hover {
+  background-color: #000000;
+}
+header nav li {
+  float: left;
+}
+figcaption {
+  color: #363636;
+  font-family: "Lato", "Times New Roman";
+  font-weight: bold;
+  margin-top: 0px;
+}
+/*Same as navbar above but for the contact bar
+the contact bar is fixed to the bottom but besides that it is essentially the same as the nav bar*/
+ul {
+  color: #363636;
+  font-family: "Lato", "Times New Roman";
+}
+blockquote {
+  color: #363636;
+  font-family: "Lato", "Times New Roman";
+}
+footer nav {
+  /*position: fixed;*/
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+footer nav ul {
+  list-style: none;
+  background-color: #363636;
+  font-family: "Lato", "Times New Roman";
+  padding: 0px;
+  margin: 0px;
+
+  overflow: hidden;
+}
+footer nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
+}
+footer nav a:hover {
+  background-color: #000000;
+}
+footer nav li {
+  float: left;
+}
+/*CSS for the inventory project*/
+span {
+  display: inline-block;
+}
+
+tr[class="read"] {
+  background-image: linear-gradient(lightgreen, rgb(12, 222, 100));
+}
+
+tr[class="in-progress"] {
+  background-image: linear-gradient(khaki, gold);
+}
+
+tr[class="to-read"] {
+  background-image: linear-gradient(rgb(177, 99, 45), red);
+}
+
+tr[class="read"] span[class="status"] {
+  font-weight: bold;
+  border-radius: 1em;
+  border: 2px solid black;
+  background-image: linear-gradient(lightgreen, rgb(12, 222, 100));
+}
+
+tr[class="to-read"] span[class="status"] {
+  font-weight: bold;
+  border: 2px solid black;
+  background-image: linear-gradient(rgb(177, 99, 45), red);
+}
+
+tr[class="in-progress"] span[class="status"] {
+  font-weight: bold;
+  border-radius: 1em;
+  background-image: linear-gradient(khaki, gold);
+  border: 2px solid black;
+}
+
+span[class="status"],
+span[class^="rate"] {
+  box-sizing: border-box;
+  height: 30px;
+  width: 120px;
+  padding: 7px;
+  display: inline-block;
+}
+
+span[class^="rate"] > span {
+  box-sizing: border-box;
+  border: 2px solid #000;
+  border-radius: 50%;
+  margin: 0 5px;
+  height: 15px;
+  width: 15px;
+  background-color: gray;
+  display: inline-block;
+}
+
+span[class~="one"] span:first-child {
+  background-color: yellow;
+  background-image: linear-gradient(darkblue, teal);
+}
+
+span[class~="two"] span:first-child,
+span[class~="two"] span:nth-child(2) {
+  background-image: linear-gradient(darkblue, teal);
+}
+
+span[class~="three"] span {
+  background-image: linear-gradient(darkblue, teal);
+}
