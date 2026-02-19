@@ -355,7 +355,7 @@ footer nav li {
   border: 0;
   padding: 14px 32px;
   margin: 20px 0 0;
-  background-color: var(--amber);
+  background-color: var(--forest);
   color: #fff;
   font-weight: 700;
   font-size: 1rem;
@@ -395,4 +395,9 @@ footer nav li {
   font-family: "Lato", "Times New Roman";
   font-size: 0.9rem;
   letter-spacing: 0.04em;
+}
+.center-img {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
 }
