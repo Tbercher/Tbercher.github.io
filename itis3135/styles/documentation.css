@@ -68,6 +68,7 @@ p {
   padding: 0;
   height: 200px;
   overflow-y: auto;
+  margin: 0; /* Added to ensure navbar ul doesn't inherit unwanted margins */
 }
 
 #navbar li {
@@ -124,14 +125,19 @@ code {
 }
 
 .image {
-  max-width: 100%;
+  box-sizing: border-box;
+  max-width: 600px; /* Increased width */
+  width: 100%; /* Scales down on smaller screens */
   height: auto;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin: 10px 0;
+  display: block; /* Required for centering */
+  margin: 20px auto; /* Centers the image */
 }
 
-ol {
+/* Updated rule to target both lists inside the documentation body */
+.main-section ul,
+.main-section ol {
   margin-left: 40px;
   margin-bottom: 20px;
 }
@@ -142,7 +148,6 @@ footer nav ul {
   margin: 0;
   padding: 0;
   background-color: #363636;
-
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
