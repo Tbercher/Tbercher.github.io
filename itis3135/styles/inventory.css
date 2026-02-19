@@ -3,7 +3,8 @@
   margin: 0;
   padding: 0;
 }
-/*Used to set the margins to 0 and maintain overall page backgroun*/
+
+/*Used to set the margins to 0 and maintain overall page background*/
 body {
   background-color: #f4f4f4;
   margin: 0px;
@@ -14,6 +15,7 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
 }
+
 /*Used to set the max width and margin*/
 main {
   margin: 0;
@@ -24,27 +26,32 @@ main {
   padding-bottom: 1rem;
   padding-top: 1rem;
 }
+
 /*Used to center heading 1 text and change color and font*/
 h1 {
   text-align: center;
   margin-bottom: 10px;
   color: #363636;
-  font-family: "Libre Baskerville", "Times New Roman";
+  font-family: "Lato", "Times New Roman";
 }
+
 /*Used to center heading 2 text and change color and font*/
 h2 {
   color: #363636;
-  font-family: "Libre Baskerville", "Times New Roman";
+  font-family: "Lato", "Times New Roman";
 }
+
 h3 {
   color: #363636;
-  font-family: "Libre Baskerville", "Times New Roman";
+  font-family: "Lato", "Times New Roman";
 }
+
 /*Used to center p text and change color and font*/
 p {
   color: #363636;
   font-family: "Lato", "Times New Roman";
 }
+
 /* Start of playing card styling*/
 #playing-cards {
   margin-top: 100px;
@@ -53,6 +60,7 @@ p {
   flex-wrap: wrap;
   gap: 20px;
 }
+
 .card {
   display: flex;
   justify-content: space-between;
@@ -60,11 +68,11 @@ p {
   max-width: 250px;
   height: 350px;
   font-size: 30px;
-  background-color: white;
-  border: 1px solid black;
+  background-color: #ffffff;
+  border: 1px solid #363636;
   padding: 5px;
   box-sizing: border-box;
-  box-shadow: 2px 2px 2px gray;
+  box-shadow: 2px 2px 2px #cccccc;
   border-radius: 10px;
 }
 
@@ -90,22 +98,24 @@ p {
 }
 
 .red {
-  color: red;
+  color: #363636; /* Unified with theme */
 }
 /* end of playing card styling*/
 
 /* Styling the Survey Form Container */
 fieldset {
-  border: 1px solid #ccc;
+  border: 1px solid #363636;
   padding: 10px;
   margin-bottom: 20px;
   font-family: "Lato", "Times New Roman";
   color: #363636;
 }
+
 legend {
   font-weight: bold;
   padding: 0 5px;
 }
+
 form {
   background: #ffffff;
   padding: 2.5rem;
@@ -134,14 +144,14 @@ textarea {
   min-width: 100%;
   padding: 12px;
   margin-bottom: 1.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   border-radius: 4px;
-  font-family: "Lato", "Arial", sans-serif;
+  font-family: "Lato", "Times New Roman";
   font-size: 1rem;
+  color: #363636;
 }
 
 /* Specific fix for Radio and Checkbox alignment */
-
 input[type="radio"],
 input[type="checkbox"] {
   display: inline-block;
@@ -168,13 +178,14 @@ form p {
   width: 100%;
   padding: 0.75rem;
   background-color: #363636;
-  color: white;
+  color: #ffffff;
   border: none;
   border-radius: 4px;
   font-size: 1.1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 1rem;
+  font-family: "Lato", "Times New Roman";
 }
 
 #submit:hover {
@@ -186,8 +197,8 @@ textarea {
   min-height: 120px;
   resize: vertical;
 }
-
 /*End of survery form styling */
+
 /*Set background color for navbar and decides the font also fixes the orientation*/
 header nav ul {
   list-style: none;
@@ -197,6 +208,7 @@ header nav ul {
   margin: 0px;
   overflow: hidden;
 }
+
 /*Used to change text color on the nav bar*/
 header nav a {
   color: #ffffff;
@@ -205,44 +217,49 @@ header nav a {
   display: block;
   text-align: center;
 }
+
 /*When hovering over selectable items the elements color changes indicating selectability*/
 header nav a:hover {
   background-color: #000000;
 }
+
 header nav li {
   float: left;
 }
+
 figcaption {
   color: #363636;
   font-family: "Lato", "Times New Roman";
   font-weight: bold;
   margin-top: 0px;
 }
-/*Same as navbar above but for the contact bar
-the contact bar is fixed to the bottom but besides that it is essentially the same as the nav bar*/
+
+/*Same as navbar above but for the contact bar*/
 ul {
   color: #363636;
   font-family: "Lato", "Times New Roman";
 }
+
 blockquote {
   color: #363636;
   font-family: "Lato", "Times New Roman";
 }
+
 footer nav {
-  /*position: fixed;*/
   bottom: 0px;
   left: 0px;
   width: 100%;
 }
+
 footer nav ul {
   list-style: none;
   background-color: #363636;
   font-family: "Lato", "Times New Roman";
   padding: 0px;
   margin: 0px;
-
   overflow: hidden;
 }
+
 footer nav a {
   color: #ffffff;
   text-decoration: none;
@@ -250,47 +267,64 @@ footer nav a {
   display: block;
   text-align: center;
 }
+
 footer nav a:hover {
   background-color: #000000;
 }
+
 footer nav li {
   float: left;
 }
+
 /*CSS for the inventory project*/
 span {
   display: inline-block;
 }
 
-tr[class="read"] {
-  background-image: linear-gradient(lightgreen, rgb(12, 222, 100));
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: "Lato", "Times New Roman";
+  color: #363636;
 }
 
-tr[class="in-progress"] {
-  background-image: linear-gradient(khaki, gold);
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #cccccc;
 }
 
-tr[class="to-read"] {
-  background-image: linear-gradient(rgb(177, 99, 45), red);
+th {
+  background-color: #363636;
+  color: #ffffff;
 }
 
-tr[class="read"] span[class="status"] {
+/* Row Background Colors to match theme */
+tr[class="available"] {
+  background-color: #ffffff;
+}
+
+tr[class="in-use"] {
+  background-color: #e6e6e6; /* Light gray */
+}
+
+tr[class="wishlist"] {
+  background-color: #cccccc; /* Mid gray */
+}
+
+/* Status Pill Styling */
+tr[class="available"] span[class="status"],
+tr[class="in-use"] span[class="status"],
+tr[class="wishlist"] span[class="status"] {
   font-weight: bold;
   border-radius: 1em;
-  border: 2px solid black;
-  background-image: linear-gradient(lightgreen, rgb(12, 222, 100));
-}
-
-tr[class="to-read"] span[class="status"] {
-  font-weight: bold;
-  border: 2px solid black;
-  background-image: linear-gradient(rgb(177, 99, 45), red);
-}
-
-tr[class="in-progress"] span[class="status"] {
-  font-weight: bold;
-  border-radius: 1em;
-  background-image: linear-gradient(khaki, gold);
-  border: 2px solid black;
+  border: 2px solid #000000;
+  background-color: #363636;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.1;
 }
 
 span[class="status"],
@@ -302,27 +336,28 @@ span[class^="rate"] {
   display: inline-block;
 }
 
+/* Rating Dots Styling */
 span[class^="rate"] > span {
   box-sizing: border-box;
-  border: 2px solid #000;
+  border: 2px solid #363636;
   border-radius: 50%;
   margin: 0 5px;
   height: 15px;
   width: 15px;
-  background-color: gray;
+  background-color: transparent;
   display: inline-block;
 }
 
 span[class~="one"] span:first-child {
-  background-color: yellow;
-  background-image: linear-gradient(darkblue, teal);
+  background-color: #363636;
 }
 
+/* Replaced nth-child(2) with first-child + span to fix the linter error */
 span[class~="two"] span:first-child,
-span[class~="two"] span:nth-child(2) {
-  background-image: linear-gradient(darkblue, teal);
+span[class~="two"] span:first-child + span {
+  background-color: #363636;
 }
 
 span[class~="three"] span {
-  background-image: linear-gradient(darkblue, teal);
+  background-color: #363636;
 }

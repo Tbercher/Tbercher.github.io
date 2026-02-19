@@ -6,7 +6,6 @@
     <title>
       Trevor Bercher's Tenacious Bear | ITIS3135 | Inventory Project
     </title>
-    <!----Accumulus Script Below-->
     <script
       src="https://lint.page/kit/4d0fe3.js"
       crossorigin="anonymous"
@@ -20,34 +19,32 @@
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap"
       rel="stylesheet"
     />
-    <!-------Link for CSS-->
   </head>
   <body>
     <header>
       <h1>Trevor Bercher's Tenacious Bear | ITIS3135 | Inventory Project</h1>
     </header>
-    <!----This is the closing tag -->
     <div data-include="components/header.html"></div>
 
     <main>
-      <h2>Inventory Project</h2>
+      <h2>Camping Supply Rental Inventory</h2>
       <table>
         <thead>
           <tr>
-            <th>Title</th>
-            <th>Author</th>
+            <th>Item</th>
+            <th>Brand</th>
             <th>Category</th>
             <th>Status</th>
-            <th>Rate</th>
+            <th>Condition Rating</th>
           </tr>
         </thead>
 
         <tbody>
-          <tr class="read">
-            <td>The Hunger Games</td>
-            <td>Suzanne Collins</td>
-            <td>Dystopian Fiction</td>
-            <td><span class="status">Read</span></td>
+          <tr class="available">
+            <td>4-Person Dome Tent</td>
+            <td>Coleman</td>
+            <td>Shelter</td>
+            <td><span class="status">Available</span></td>
             <td>
               <span class="rate three">
                 <span></span>
@@ -57,11 +54,11 @@
             </td>
           </tr>
 
-          <tr class="read">
-            <td>The Outsiders</td>
-            <td>S.E Hinton</td>
-            <td>Young Adult</td>
-            <td><span class="status">Read</span></td>
+          <tr class="available">
+            <td>Mummy Sleeping Bag</td>
+            <td>The North Face</td>
+            <td>Bedding</td>
+            <td><span class="status">Available</span></td>
             <td>
               <span class="rate two">
                 <span></span>
@@ -71,11 +68,11 @@
             </td>
           </tr>
 
-          <tr class="in-progress">
-            <td>To Kill A Mockingbird</td>
-            <td>Harper Lee</td>
-            <td>Gothic</td>
-            <td><span class="status">In Progress</span></td>
+          <tr class="in-use">
+            <td>Flash Cooking System</td>
+            <td>Jetboil</td>
+            <td>Cooking</td>
+            <td><span class="status">In Use</span></td>
             <td>
               <span class="rate one">
                 <span></span>
@@ -85,11 +82,95 @@
             </td>
           </tr>
 
-          <tr class="to-read">
-            <td>Blueback</td>
-            <td>Tim Winton</td>
-            <td>Nautical Fiction</td>
-            <td><span class="status">To Read</span></td>
+          <tr class="available">
+            <td>Spot 400 Headlamp</td>
+            <td>Black Diamond</td>
+            <td>Lighting</td>
+            <td><span class="status">Available</span></td>
+            <td>
+              <span class="rate three">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </td>
+          </tr>
+
+          <tr class="available">
+            <td>Ultralight First Aid Kit</td>
+            <td>Adventure Medical Kits</td>
+            <td>Safety</td>
+            <td><span class="status">Available</span></td>
+            <td>
+              <span class="rate three">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </td>
+          </tr>
+
+          <tr class="in-use">
+            <td>Explorer 300 Power Station</td>
+            <td>Jackery</td>
+            <td>Electronics</td>
+            <td><span class="status">In Use</span></td>
+            <td>
+              <span class="rate two">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </td>
+          </tr>
+
+          <tr class="available">
+            <td>Chair Zero</td>
+            <td>Helinox</td>
+            <td>Furniture</td>
+            <td><span class="status">Available</span></td>
+            <td>
+              <span class="rate two">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </td>
+          </tr>
+
+          <tr class="in-use">
+            <td>BV500 Bear Canister</td>
+            <td>BearVault</td>
+            <td>Storage</td>
+            <td><span class="status">In Use</span></td>
+            <td>
+              <span class="rate one">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </td>
+          </tr>
+
+          <tr class="wishlist">
+            <td>Water Filtration System</td>
+            <td>Sawyer</td>
+            <td>Hydration</td>
+            <td><span class="status">Unavailable</span></td>
+            <td>
+              <span class="rate">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </td>
+          </tr>
+
+          <tr class="wishlist">
+            <td>Wave+ Multitool</td>
+            <td>Leatherman</td>
+            <td>Tools</td>
+            <td><span class="status">Unavailable</span></td>
             <td>
               <span class="rate">
                 <span></span>
