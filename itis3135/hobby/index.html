@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hobby Site: Physical Media Collection</title>
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="icon" type="image/png" href="images/favicon.png" />
 
     <style>
@@ -81,7 +85,7 @@
         display: none; /* Hide all sections by default */
       }
 
-      section.active {
+      .active {
         display: block; /* Only show the active section */
         animation: fadeIn 0.5s ease-in-out;
       }
@@ -131,6 +135,11 @@
         display: block;
         margin-top: 5px;
         color: #9cb5a1;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid var(--accent-color);
       }
 
       /* FOOTER */
@@ -212,7 +221,7 @@
       </section>
 
       <section id="who">
-        <h2>The Collector</h2>
+        <h2>The Collector (About Me)</h2>
         <p>
           As a 25-year old student veteran and computer science senior at UNC
           Charlotte, my days are often heavily immersed in screens, code, and
@@ -230,7 +239,7 @@
           <img
             src="images/who-collector.png"
             alt="A young man sitting near a bookshelf with a dog"
-            width="400"
+            width="600"
             height="400"
           />
           <figcaption>
@@ -250,15 +259,7 @@
           and games online 24/7, the true thrill of the hunt comes from knowing
           exactly <em>when</em> to look for the best additions to the archive.
         </p>
-        <table
-          border="1"
-          style="
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            border-color: var(--accent-color);
-          "
-        >
+        <table style="width: 100%; border-collapse: collapse; text-align: left">
           <tr>
             <th style="padding: 10px">Season / Time</th>
             <th style="padding: 10px">Best For</th>
@@ -308,27 +309,32 @@
             border-radius: 5px;
           "
         >
-          <label for="location-vote"
-            >Vote for your favorite hunting ground:</label
-          ><br />
-          <input type="radio" id="local" name="location" value="local" />
-          <label for="local">Local Used Record/Movie Stores</label><br />
-          <input type="radio" id="online" name="location" value="online" />
-          <label for="online">Online Auctions (eBay, Mercari)</label><br />
-          <input
-            type="button"
-            value="Submit Vote"
-            style="
-              margin-top: 10px;
-              background-color: var(--accent-color);
-              color: var(--nav-bg);
-              border: none;
-              padding: 6px 12px;
-              font-weight: bold;
-              cursor: pointer;
-              border-radius: 3px;
-            "
-          />
+          <fieldset style="border: none; padding: 0; margin: 0">
+            <legend style="margin-bottom: 10px">
+              Vote for your favorite hunting ground:
+            </legend>
+
+            <input type="radio" id="local" name="location" value="local" />
+            <label for="local">Local Used Record/Movie Stores</label><br />
+
+            <input type="radio" id="online" name="location" value="online" />
+            <label for="online">Online Auctions (eBay, Mercari)</label><br />
+
+            <input
+              type="button"
+              value="Submit Vote"
+              style="
+                margin-top: 10px;
+                background-color: var(--accent-color);
+                color: var(--nav-bg);
+                border: none;
+                padding: 6px 12px;
+                font-weight: bold;
+                cursor: pointer;
+                border-radius: 3px;
+              "
+            />
+          </fieldset>
         </form>
         <figure>
           <img
@@ -432,9 +438,21 @@
         <ul>
           <li>
             <strong>Code Generation:</strong> AI was prompted to generate an
-            HTML/CSS structure utilizing JavaScript to toggle the
+            Script utilizing JavaScript to toggle the
             <code>display</code> property of semantic
             <code>&lt;section&gt;</code> tags.
+            <br />
+            <strong>Prompt:</strong> "I am building a vanilla JS single page app
+            with this structure: <br />&lt;section id=&quot;home&quot;
+            class=&quot;active&quot;&gt;...&lt;/section&gt;<br />
+            &lt;section id=&quot;about&quot;&gt;...&lt;/section&gt;<br />
+            &lt;section id=&quot;contact&quot;&gt;...&lt;/section&gt;
+            <br />
+            Write a JavaScript function called showSection(sectionId) that I can
+            trigger from my navigation buttons. It should find all sections in
+            the main tag, strip the 'active' class from them, and apply it only
+            to the one matching the passed ID. Comment the steps clearly (1, 2,
+            3)."
           </li>
           <li>
             <strong>Image Generation:</strong> AI was used to generate all
