@@ -101,6 +101,18 @@
         border-radius: 8px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
       }
+      main a {
+        color: var(--link-color);
+        text-decoration: underline;
+        text-decoration-color: var(--accent-color);
+        text-decoration-thickness: 2px;
+        transition: color 0.3s ease;
+      }
+
+      main a:hover,
+      main a:focus {
+        color: var(--accent-color);
+      }
 
       /* CSS for the Single Page App feel */
       section {
@@ -145,7 +157,6 @@
         max-width: 100%;
         height: auto;
         border-radius: 4px;
-        image-rendering: pixelated; /* Gives images a slightly sharper, retro look if scaled */
       }
 
       figcaption {
@@ -467,11 +478,11 @@
       </section>
 
       <section id="ai-prompts">
-        <h2>Behind the Code (AI Usage)</h2>
+        <h2>AI Usage</h2>
         <p>
-          Generative AI was utilized to assist in the conceptualization and
-          coding of this single-page application, ensuring structural compliance
-          and CRAP design principles.
+          Google's Gemmeni Generative AI was utilized to assist in the
+          conceptualization and coding of this single-page application, ensuring
+          structural compliance and CRAP design principles.
         </p>
         <ul>
           <li>
@@ -503,6 +514,16 @@
             the assignment. Beneath each image is the respective prompt that was
             utilized to generate the image.
           </li>
+          <li>
+            <strong>Assignment Requirement Validation:</strong> AI was used to
+            validate that all requirements given on the canvas webpage were
+            achieved.<br /><strong>Prompt:</strong> Using the following
+            <a href="document.pdf" target="_blank">PDF Document</a> validate
+            that all rubric requirements were met on the following code. (for
+            the sake of simplicity I won't be pasting the entire code block) if
+            not make a detailed list of what is missing and how that can be
+            fixed.
+          </li>
         </ul>
       </section>
     </main>
@@ -512,6 +533,13 @@
         Designed by
         <a href="../bercherenterprises.com/index.html">Bercher Enterprises</a>
       </p>
+      <div class="validators">
+        <a href="https://validator.w3.org/check?uri=referer">HTML Validation</a>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer"
+          >CSS Validation</a
+        >
+        <a href="https://wave.webaim.org/report#/">Accessibility Validation</a>
+      </div>
     </footer>
 
     <script>
