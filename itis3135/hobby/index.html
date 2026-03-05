@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hobby Site: Physical Media Collection</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <style>
+      /*Color Scheme For Website*/
+      :root {
+        --bg-color: #1c2b23; /* Deep, relaxing forest green */
+        --nav-bg: #121e17; /* header/footer/cards */
+        --text-color: #e0ebd8;
+        --accent-color: #82b082; /* headings/borders */
+        --link-color: #d6c89a;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      /* Header + Nav */
+      header {
+        background-color: var(--nav-bg);
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4px solid var(--accent-color);
+      }
+
+      h1 {
+        color: var(--accent-color);
+        margin-top: 0;
+      }
+
+      h2 {
+        color: var(--accent-color);
+        border-bottom: 2px solid var(--text-color);
+        padding-bottom: 5px;
+      }
+
+      nav a {
+        color: var(--link-color);
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1em;
+        padding: 5px 10px;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover,
+      nav a:focus {
+        color: var(--text-color);
+        text-decoration: underline;
+        text-decoration-color: var(--accent-color);
+        text-decoration-thickness: 3px;
+      }
+
+      .nav-divider {
+        color: var(--accent-color);
+        margin: 0 5px;
+      }
+
+      /* MAIN CONTENT & SECTIONS */
+      main {
+        max-width: 900px;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: var(--nav-bg);
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      /* CSS for the Single Page App feel */
+      section {
+        display: none; /* Hide all sections by default */
+      }
+
+      section.active {
+        display: block; /* Only show the active section */
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* TYPOGRAPHY & MEDIA */
+      p,
+      ul,
+      ol,
+      blockquote {
+        margin-bottom: 15px;
+      }
+
+      figure {
+        margin: 20px 0;
+        padding: 15px;
+        background-color: var(--bg-color);
+        border: 1px solid var(--nav-bg);
+        border-left: 4px solid var(--accent-color);
+        text-align: center;
+        border-radius: 4px;
+      }
+
+      figure img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+      }
+
+      figcaption {
+        margin-top: 10px;
+        font-size: 0.9em;
+        color: var(--link-color);
+      }
+
+      figcaption i {
+        display: block;
+        margin-top: 5px;
+        color: #9cb5a1;
+      }
+
+      /* FOOTER */
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: var(--nav-bg);
+        border-top: 2px solid var(--accent-color);
+        margin-top: 40px;
+      }
+
+      footer a {
+        color: var(--link-color);
+        text-decoration: none;
+        margin: 0 10px;
+      }
+
+      footer a:hover {
+        color: var(--accent-color);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Physical Media Collection</h1>
+      <nav>
+        <a href="#what" onclick="showSection('what')">What</a>
+        <span class="nav-divider">|</span>
+        <a href="#who" onclick="showSection('who')">Who</a>
+        <span class="nav-divider">|</span>
+        <a href="#when" onclick="showSection('when')">When</a>
+        <span class="nav-divider">|</span>
+        <a href="#where" onclick="showSection('where')">Where</a>
+        <span class="nav-divider">|</span>
+        <a href="#how" onclick="showSection('how')">How</a>
+        <span class="nav-divider">|</span>
+        <a href="#why" onclick="showSection('why')">Why</a>
+        <span class="nav-divider">|</span>
+        <a href="#ai-prompts" onclick="showSection('ai-prompts')">AI Prompts</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="what" class="active">
+        <h2>What is Physical Media Collection?</h2>
+        <p>
+          Physical media collection is the dedicated hobby of acquiring,
+          archiving, and enjoying physical formats of entertainment. In an era
+          dominated by invisible digital streams, this hobby focuses on data
+          stored in phyisical means like discs and cassettes with examples
+          being.
+        </p>
+        <ul>
+          <li>
+            <strong>Film & Television:</strong> Blu-rays, 4K UHDs, and boutique
+            label releases (like Criterion or Arrow Video).
+          </li>
+          <li>
+            <strong>Video Games:</strong> Cartridges and discs across various
+            console generations.
+          </li>
+          <li><strong>Music:</strong> Vinyl records, CDs, and cassettes.</li>
+        </ul>
+        <figure>
+          <img
+            src="images/what-collection.png"
+            alt="A well-organized shelf displaying Blu-rays and other physical media."
+            width="600"
+            height="400"
+          />
+          <figcaption>
+            A curated shelf showcasing a diverse physical media library.
+            <br /><i
+              >AI Prompt: "A stack of Blu-ray movie cases and other physical
+              media on a dark wooden shelf, photorealistic."</i
+            >
+          </figcaption>
+        </figure>
+      </section>
+
+      <section id="who">
+        <h2>The Collector</h2>
+        <p>
+          As a 25-year old student veteran and computer science senior at UNC
+          Charlotte, my days are often heavily immersed in screens, code, and
+          studying the intricacies of information technology. Navigating the
+          digital world is my profession and my major, which makes stepping away
+          from it all the more important.
+        </p>
+        <p>
+          When I'm not diving into strategy games or spending time with my dog,
+          Bella, I focus my free time on something beautifully disconnected from
+          the cloud. Collecting physical media allows me to anchor my love for
+          art and entertainment in something tangible that I can actually hold.
+        </p>
+        <figure>
+          <img
+            src="images/who-collector.png"
+            alt="A young man sitting near a bookshelf with a dog"
+            width="400"
+            height="400"
+          />
+          <figcaption>
+            Stepping away from the code to organize the shelves. <br /><i
+              >AI Prompt: "Using these photos generate a photo realistic image
+              of a man and his dog sitting next to a massive home theater
+              bookshelf (Photos were of myself and my dog bella)"</i
+            >
+          </figcaption>
+        </figure>
+      </section>
+
+      <section id="when">
+        <h2>When to Hunt for Physical Media</h2>
+        <p>
+          Building a solid collection requires timing. While you can buy movies
+          and games online 24/7, the true thrill of the hunt comes from knowing
+          exactly <em>when</em> to look for the best additions to the archive.
+        </p>
+        <table
+          border="1"
+          style="
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            border-color: var(--accent-color);
+          "
+        >
+          <tr>
+            <th style="padding: 10px">Season / Time</th>
+            <th style="padding: 10px">Best For</th>
+          </tr>
+          <tr>
+            <td style="padding: 10px">November (Black Friday)</td>
+            <td style="padding: 10px">
+              Deep discounts on boutique labels (Criterion 50% off sales).
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 10px">Saturday Mornings</td>
+            <td style="padding: 10px">
+              Flea markets, garage sales, and thrift store weekend restocks.
+            </td>
+          </tr>
+        </table>
+        <figure>
+          <img
+            src="images/when-calendar.png"
+            alt="A neon calendar highlighting the weekend"
+            width="600"
+            height="400"
+          />
+          <figcaption>
+            Marking the calendar for the next big boutique label sale. <br /><i
+              >AI Prompt: "A photo realistic calendar with the weekend circled
+              in green marker"</i
+            >
+          </figcaption>
+        </figure>
+      </section>
+
+      <section id="where">
+        <h2>Where to Find the Best Media</h2>
+        <p>
+          Part of the hobby is exploring different venues. From local
+          brick-and-mortar shops around Charlotte to vast online networks,
+          expanding the collection takes you to many places.
+        </p>
+        <form
+          action="#"
+          method="get"
+          style="
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 5px;
+          "
+        >
+          <label for="location-vote"
+            >Vote for your favorite hunting ground:</label
+          ><br />
+          <input type="radio" id="local" name="location" value="local" />
+          <label for="local">Local Used Record/Movie Stores</label><br />
+          <input type="radio" id="online" name="location" value="online" />
+          <label for="online">Online Auctions (eBay, Mercari)</label><br />
+          <input
+            type="button"
+            value="Submit Vote"
+            style="
+              margin-top: 10px;
+              background-color: var(--accent-color);
+              color: var(--nav-bg);
+              border: none;
+              padding: 6px 12px;
+              font-weight: bold;
+              cursor: pointer;
+              border-radius: 3px;
+            "
+          />
+        </form>
+        <figure>
+          <img
+            src="images/where-store.png"
+            alt="Interior of a vintage media store"
+            width="600"
+            height="400"
+          />
+          <figcaption>
+            The aisles of a classic local movie shop. <br /><i
+              >AI Prompt: "a photorealistic vintage movie store packed shelves
+              highly detailed."</i
+            >
+          </figcaption>
+        </figure>
+      </section>
+
+      <section id="how">
+        <h2>How to Curate and Store</h2>
+        <p>
+          Collecting isn't just about hoarding; it's about curation,
+          preservation, and display. Proper organization ensures that media
+          outlasts its digital counterparts.
+        </p>
+        <ol>
+          <li>
+            <strong>Cataloging:</strong> Use apps like CLZ Movies or Blu-ray.com
+            to scan barcodes and track what you own.
+          </li>
+          <li>
+            <strong>Shelving:</strong> Organize alphabetically, by genre, or by
+            boutique label spines (the age-old debate).
+          </li>
+          <li>
+            <strong>Maintenance:</strong> Keep discs out of direct sunlight and
+            handle them strictly by the edges.
+          </li>
+        </ol>
+        <figure>
+          <img
+            src="images/how-shelves.png"
+            alt="Perfectly organized media shelves"
+            width="600"
+            height="400"
+          />
+          <figcaption>
+            An alphabetized physical media library. <br /><i
+              >AI Prompt: "Perfectly organized shelves of Blu-ray movies and
+              video games, neatly aligned, photorealstic."</i
+            >
+          </figcaption>
+        </figure>
+      </section>
+
+      <section id="why">
+        <h2>Why Keep Physical Discs?</h2>
+        <p>
+          In the age of streaming, why bother with physical boxes? The answer
+          lies in digital rights, video quality, and the simple joy of
+          ownership.
+        </p>
+        <blockquote
+          style="
+            border-left: 4px solid var(--accent-color);
+            padding-left: 15px;
+            font-style: italic;
+          "
+        >
+          "You don't own what you stream. Titles disappear from platforms every
+          day due to licensing issues. Physical media is the only guarantee that
+          your favorite film will be there when you want to watch it."
+        </blockquote>
+        <p>
+          Furthermore, 4K UHD discs offer significantly higher bitrates than 4K
+          streaming, meaning uncompressed, flawless audio and visual experiences
+          without buffering.
+        </p>
+        <figure>
+          <img
+            src="images/why-disc.png"
+            alt="A physical disc held against a digital cloud"
+            width="600"
+            height="400"
+          />
+          <figcaption>
+            Tangible ownership over temporary licenses. <br /><i
+              >AI Prompt: "A realistic contrast between a glowing holographic
+              cloud and a solid, tangible media disc held in a hand."</i
+            >
+          </figcaption>
+        </figure>
+      </section>
+
+      <section id="ai-prompts">
+        <h2>Behind the Code (AI Usage)</h2>
+        <p>
+          Generative AI was utilized to assist in the conceptualization and
+          coding of this single-page application, ensuring structural compliance
+          and CRAP design principles.
+        </p>
+        <ul>
+          <li>
+            <strong>Code Generation:</strong> AI was prompted to generate an
+            HTML/CSS structure utilizing JavaScript to toggle the
+            <code>display</code> property of semantic
+            <code>&lt;section&gt;</code> tags.
+          </li>
+          <li>
+            <strong>Image Generation:</strong> AI was used to generate all
+            thematic imagery to maintain a consistent visual style throughout
+            the assignment. Beneath each image is the respective prompt that was
+            utilized to generate the image.
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Designed by<a href="../bercherenterprises.com/index.html"
+          >Bercher Enterprises</a
+        >
+      </p>
+    </footer>
+
+    <script>
+      // JavaScript to handle the "Single Page App" functionality
+      function showSection(sectionId) {
+        // 1. Get all sections within the main tag
+        const sections = document.querySelectorAll("main section");
+
+        // 2. Loop through and remove the 'active' class from all of them
+        sections.forEach(function (sec) {
+          sec.classList.remove("active");
+        });
+
+        // 3. Add the 'active' class to the target section
+        document.getElementById(sectionId).classList.add("active");
+      }
+    </script>
+  </body>
+</html>
