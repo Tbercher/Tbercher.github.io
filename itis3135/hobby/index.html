@@ -212,19 +212,21 @@
     <header>
       <h1>Physical Media Collection</h1>
       <nav>
-        <a href="#what" onclick="showSection('what')">What</a>
+        <a href="#what" onclick="showSection(event, 'what')">What</a>
         <span class="nav-divider">📀</span>
-        <a href="#who" onclick="showSection('who')">Who</a>
+        <a href="#who" onclick="showSection(event, 'who')">Who</a>
         <span class="nav-divider">📀</span>
-        <a href="#when" onclick="showSection('when')">When</a>
+        <a href="#when" onclick="showSection(event, 'when')">When</a>
         <span class="nav-divider">📀</span>
-        <a href="#where" onclick="showSection('where')">Where</a>
+        <a href="#where" onclick="showSection(event, 'where')">Where</a>
         <span class="nav-divider">📀</span>
-        <a href="#how" onclick="showSection('how')">How</a>
+        <a href="#how" onclick="showSection(event, 'how')">How</a>
         <span class="nav-divider">📀</span>
-        <a href="#why" onclick="showSection('why')">Why</a>
+        <a href="#why" onclick="showSection(event, 'why')">Why</a>
         <span class="nav-divider">📀</span>
-        <a href="#ai-prompts" onclick="showSection('ai-prompts')">AI Prompts</a>
+        <a href="#ai-prompts" onclick="showSection(event, 'ai-prompts')"
+          >AI Prompts</a
+        >
       </nav>
     </header>
 
@@ -590,17 +592,22 @@
 
     <script>
       // JavaScript to handle the "Single Page App" functionality
-      function showSection(sectionId) {
-        // 1. Get all sections within the main tag
+      // Add 'event' as a parameter here
+      function showSection(event, sectionId) {
+        // 1. Prevent the browser from jumping to the anchor link
+        event.preventDefault();
+
+        // 2. Get all sections within the main tag
         const sections = document.querySelectorAll("main section");
 
-        // 2. Loop through and remove the 'active' class from all of them
+        // 3. Loop through and remove the 'active' class
         sections.forEach(function (sec) {
           sec.classList.remove("active");
         });
 
-        // 3. Add the 'active' class to the target section
+        // 4. Add the 'active' class to the target section
         document.getElementById(sectionId).classList.add("active");
+
         const h1 = document.querySelector("h1");
         const h2 = document.querySelector("active.h2");
         document.title = h1.textContent + " | " + h2.textContent;
