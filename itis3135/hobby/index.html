@@ -10,6 +10,13 @@
     ></script>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
       /*Color Scheme For Website*/
       :root {
@@ -18,15 +25,41 @@
         --text-color: #e0ebd8;
         --accent-color: #82b082; /* headings/borders */
         --link-color: #d6c89a;
+
+        /* Nerdy Font Variables */
+        --heading-font: "VT323", monospace;
+        --body-font: "Space Mono", monospace;
       }
 
       body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: var(--body-font);
         background-color: var(--bg-color);
         color: var(--text-color);
         margin: 0;
         padding: 0;
         line-height: 1.6;
+      }
+
+      /* Headings */
+      h1 {
+        font-family: var(--heading-font);
+        letter-spacing: 1px;
+        color: var(--accent-color);
+        margin-top: 0;
+        font-size: 3em; /* Bumped up size for VT323 */
+      }
+
+      h2 {
+        font-family: var(--heading-font);
+        letter-spacing: 1px;
+        color: var(--accent-color);
+        border-bottom: 2px dashed var(--text-color); /* Changed to dashed for a coupon/retro feel */
+        padding-bottom: 5px;
+        font-size: 2.2em;
+      }
+      legend {
+        font-family: var(--heading-font);
+        letter-spacing: 1px;
       }
 
       /* Header + Nav */
@@ -37,32 +70,21 @@
         border-bottom: 4px solid var(--accent-color);
       }
 
-      h1 {
-        color: var(--accent-color);
-        margin-top: 0;
-      }
-
-      h2 {
-        color: var(--accent-color);
-        border-bottom: 2px solid var(--text-color);
-        padding-bottom: 5px;
-      }
-
       nav a {
+        font-family: var(--heading-font);
         color: var(--link-color);
         text-decoration: none;
-        font-weight: bold;
-        font-size: 1.1em;
+        font-size: 1.8em; /* Bumped up for VT323 */
         padding: 5px 10px;
-        transition: color 0.3s ease;
+        transition:
+          color 0.3s ease,
+          text-shadow 0.3s ease;
       }
 
       nav a:hover,
       nav a:focus {
         color: var(--text-color);
-        text-decoration: underline;
-        text-decoration-color: var(--accent-color);
-        text-decoration-thickness: 3px;
+        text-shadow: 0 0 8px var(--accent-color); /* Added a subtle terminal glow effect on hover */
       }
 
       .nav-divider {
@@ -70,14 +92,14 @@
         margin: 0 5px;
       }
 
-      /* MAIN CONTENT & SECTIONS */
+      /* MAIN & SECTIONS */
       main {
         max-width: 900px;
         margin: 30px auto;
         padding: 20px;
         background-color: var(--nav-bg);
         border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
       }
 
       /* CSS for the Single Page App feel */
@@ -107,14 +129,14 @@
       ol,
       blockquote {
         margin-bottom: 15px;
+        font-size: 0.95em; /* Space Mono is quite wide, scaling it down slightly */
       }
 
       figure {
         margin: 20px 0;
         padding: 15px;
         background-color: var(--bg-color);
-        border: 1px solid var(--nav-bg);
-        border-left: 4px solid var(--accent-color);
+        border: 1px solid var(--accent-color); /* Made border match the accent */
         text-align: center;
         border-radius: 4px;
       }
@@ -123,11 +145,12 @@
         max-width: 100%;
         height: auto;
         border-radius: 4px;
+        image-rendering: pixelated; /* Gives images a slightly sharper, retro look if scaled */
       }
 
       figcaption {
         margin-top: 10px;
-        font-size: 0.9em;
+        font-size: 0.85em;
         color: var(--link-color);
       }
 
@@ -136,6 +159,7 @@
         margin-top: 5px;
         color: #9cb5a1;
       }
+
       table,
       th,
       td {
@@ -152,13 +176,24 @@
       }
 
       footer a {
+        font-family: var(--heading-font);
         color: var(--link-color);
         text-decoration: none;
         margin: 0 10px;
+        font-size: 1.5em;
       }
 
       footer a:hover {
         color: var(--accent-color);
+        text-shadow: 0 0 5px var(--accent-color);
+      }
+
+      /* Code blocks styling for the AI Prompts section */
+      code {
+        background-color: #000;
+        color: #0f0; /* Classic hacker green for inline code */
+        padding: 2px 5px;
+        border-radius: 3px;
       }
     </style>
   </head>
@@ -190,7 +225,7 @@
           archiving, and enjoying physical formats of entertainment. In an era
           dominated by invisible digital streams, this hobby focuses on data
           stored in phyisical means like discs and cassettes with examples
-          being.
+          being:
         </p>
         <ul>
           <li>
@@ -310,7 +345,9 @@
           "
         >
           <fieldset style="border: none; padding: 0; margin: 0">
-            <legend style="margin-bottom: 10px">
+            <legend
+              style="margin-bottom: 10px; font-weight: bold; font-size: 1.2em"
+            >
               Vote for your favorite hunting ground:
             </legend>
 
@@ -325,6 +362,7 @@
               value="Submit Vote"
               style="
                 margin-top: 10px;
+                font-family: var(--body-font);
                 background-color: var(--accent-color);
                 color: var(--nav-bg);
                 border: none;
@@ -443,10 +481,15 @@
             <code>&lt;section&gt;</code> tags.
             <br />
             <strong>Prompt:</strong> "I am building a vanilla JS single page app
-            with this structure: <br />&lt;section id=&quot;home&quot;
-            class=&quot;active&quot;&gt;...&lt;/section&gt;<br />
-            &lt;section id=&quot;about&quot;&gt;...&lt;/section&gt;<br />
-            &lt;section id=&quot;contact&quot;&gt;...&lt;/section&gt;
+            with this structure: <br /><code
+              >&lt;section id=&quot;home&quot;
+              class=&quot;active&quot;&gt;...&lt;/section&gt;</code
+            ><br />
+            <code>&lt;section id=&quot;about&quot;&gt;...&lt;/section&gt;</code
+            ><br />
+            <code
+              >&lt;section id=&quot;contact&quot;&gt;...&lt;/section&gt;</code
+            >
             <br />
             Write a JavaScript function called showSection(sectionId) that I can
             trigger from my navigation buttons. It should find all sections in
@@ -466,9 +509,8 @@
 
     <footer>
       <p>
-        Designed by<a href="../bercherenterprises.com/index.html"
-          >Bercher Enterprises</a
-        >
+        Designed by
+        <a href="../bercherenterprises.com/index.html">Bercher Enterprises</a>
       </p>
     </footer>
 
