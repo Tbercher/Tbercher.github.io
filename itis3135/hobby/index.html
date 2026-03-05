@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hobby Site: Physical Media Collection</title>
+    <title>Hobby Site | Physical Media Collection | What</title>
     <script
       src="https://lint.page/kit/4d0fe3.js"
       crossorigin="anonymous"
@@ -267,7 +267,7 @@
       </section>
 
       <section id="who">
-        <h2>The Collector (About Me)</h2>
+        <h2>The Collector (Who / About Me)</h2>
         <p>
           As a 25-year old student veteran and computer science senior at UNC
           Charlotte, my days are often heavily immersed in screens, code, and
@@ -322,6 +322,14 @@
               Flea markets, garage sales, and thrift store weekend restocks.
             </td>
           </tr>
+          <tr>
+            <td style="padding: 10px">Monday and Tuesday Mornings</td>
+            <td style="padding: 10px">
+              Typically thrift stores restock at this time of the week, its
+              store dependent but these are the typical days so check
+              beforehand.
+            </td>
+          </tr>
         </table>
         <figure>
           <img
@@ -369,8 +377,30 @@
             <label for="online">Online Auctions (eBay, Mercari)</label><br />
 
             <input
+              type="radio"
+              id="MajorRetailers"
+              name="location"
+              value="online"
+            />
+            <label for="online"
+              >Major Retailers (Target, Walmart, Barnes and Noble)</label
+            ><br />
+
+            <input
+              type="radio"
+              id="marketplace"
+              name="location"
+              value="online"
+            />
+            <label for="online">Facebook Marketplace </label><br />
+
+            <input type="radio" id="other" name="location" value="online" />
+            <label for="online">Other</label><br />
+
+            <input
               type="button"
               value="Submit Vote"
+              onclick="alert('Vote Submitted')"
               style="
                 margin-top: 10px;
                 font-family: var(--body-font);
@@ -524,6 +554,15 @@
             utilized to generate the image.
           </li>
           <li>
+            <strong>Title Generation when clicked:</strong> AI was used to
+            generate javascript that combines the h1 + | + whichever section was
+            clicked to make an appropriate title for each respective webpage.
+            <br />
+            <strong>Prompt:</strong>use java script to combine the words Hobby
+            Site + | + h1 + | + the name of whichever section was clicked to
+            make an approprioate title for the webpage.
+          </li>
+          <li>
             <strong>Assignment Requirement Validation:</strong> AI was used to
             validate that all requirements given on the canvas webpage were
             achieved.<br /><strong>Prompt:</strong> Using the following
@@ -547,13 +586,6 @@
         Designed by
         <a href="../bercherenterprises.com/index.html">Bercher Enterprises</a>
       </p>
-      <div class="validators">
-        <a href="https://validator.w3.org/check?uri=referer">HTML Validation</a>
-        <a href="https://jigsaw.w3.org/css-validator/check/referer"
-          >CSS Validation</a
-        >
-        <a href="https://wave.webaim.org/report#/">Accessibility Validation</a>
-      </div>
     </footer>
 
     <script>
@@ -569,7 +601,28 @@
 
         // 3. Add the 'active' class to the target section
         document.getElementById(sectionId).classList.add("active");
+        const h1 = document.querySelector("h1");
+        const h2 = document.querySelector("active.h2");
+        document.title = h1.textContent + " | " + h2.textContent;
       }
+    </script>
+    <script>
+      // 1. Grab the H1 text once (assuming it stays static)
+      const mainHeading = document.querySelector("h1").textContent;
+
+      // 2. Select the navigation container
+      const nav = document.querySelector("nav");
+
+      // 3. Listen for clicks on the nav
+      nav.addEventListener("click", (event) => {
+        // Ensure we only trigger this if an actual link (anchor tag) was clicked
+        if (event.target.tagName === "A") {
+          const linkText = event.target.textContent;
+
+          // 4. Update the document title
+          document.title = `Hobby Site | ${mainHeading} | ${linkText}`;
+        }
+      });
     </script>
   </body>
 </html>
