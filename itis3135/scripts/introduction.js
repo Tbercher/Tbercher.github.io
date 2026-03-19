@@ -4,44 +4,121 @@ document.addEventListener("DOMContentLoaded", () => {
   const pageTitle = document.getElementById("page-title");
   const formSubtitle = document.getElementById("form-subtitle");
 
+  // Containers matching your HTML IDs
+  const courseSection = document.getElementById("courses-container");
+  const linkSection = document.getElementById("links-container");
+
+  const DEFAULT_IMG = "images/myprofessionalheadshot.png";
+
   const getVal = (id) => {
     const el = document.getElementById(id);
     return el ? el.value.trim() : "";
   };
 
-  // --- 1. Clear Button Logic ---
+  // --- 1. Dynamic Row Logic ---
+
+  // Add Course Row
+  const addCourseBtn = document.getElementById("add-course-btn");
+  if (addCourseBtn) {
+    addCourseBtn.onclick = () => {
+      const newCourse = document.createElement("div");
+      newCourse.className = "course-entry";
+      newCourse.innerHTML = `
+            <input type="text" class="course-dept" placeholder="Dept" required>
+            <input type="text" class="course-num" placeholder="Number" required>
+            <input type="text" class="course-name" placeholder="Course Name" required>
+            <input type="text" class="course-reason" placeholder="Why?" required>
+            <button type="button" class="delete-course-btn">Delete</button>
+        `;
+      courseSection.appendChild(newCourse);
+    };
+  }
+
+  // Add Link Row
+  const addLinkBtn = document.getElementById("add-link-btn");
+  if (addLinkBtn) {
+    addLinkBtn.onclick = () => {
+      const newLink = document.createElement("div");
+      newLink.className = "link-entry";
+      newLink.innerHTML = `
+            <label>Link Name: <input type="text" class="link-name" required></label>
+            <label>URL: <input type="url" class="link-url" required></label>
+            <button type="button" class="delete-link-btn">Delete</button>
+        `;
+      linkSection.appendChild(newLink);
+    };
+  }
+
+  // Delete Logic (Prevents deleting the last remaining row)
+  document.addEventListener("click", (e) => {
+    if (
+      e.target &&
+      (e.target.classList.contains("delete-course-btn") ||
+        e.target.classList.contains("delete-link-btn"))
+    ) {
+      const entryClass = e.target.classList.contains("delete-course-btn")
+        ? ".course-entry"
+        : ".link-entry";
+      if (document.querySelectorAll(entryClass).length > 1) {
+        e.target.parentElement.remove();
+      } else {
+        e.target.parentElement
+          .querySelectorAll("input")
+          .forEach((i) => (i.value = ""));
+      }
+    }
+  });
+
+  // --- 2. Button Logic (Reset vs Clear) ---
+
+  // RESET BUTTON: Returns to the Trevor template
+  const resetBtn = document.getElementById("reset-btn");
+  if (resetBtn) {
+    resetBtn.onclick = () => {
+      window.location.reload();
+    };
+  }
+
+  // CLEAR BUTTON: Makes the form entirely blank
   const clearBtn = document.getElementById("clear-btn");
   if (clearBtn) {
-    clearBtn.onclick = () => {
-      // Standard form reset
-      form.reset();
+    clearBtn.onclick = (e) => {
+      e.preventDefault();
 
-      // Manually empty all inputs to ensure they are truly blank
+      // Wipe all main inputs
       form.querySelectorAll("input, textarea").forEach((input) => {
-        if (!["submit", "button"].includes(input.type)) {
+        if (!["submit", "reset", "button", "hidden"].includes(input.type)) {
           input.value = "";
         }
       });
 
-      // FIX: Force the image preview back to your professional headshot
-      const previewImg = document.querySelector("#intro-form img");
-      if (previewImg) {
-        previewImg.src = "images/myprofessionalheadshot.png";
-      }
+      // Prune Courses to 1 empty row
+      const courses = document.querySelectorAll(".course-entry");
+      courses.forEach((c, index) => {
+        if (index > 0) c.remove();
+        else c.querySelectorAll("input").forEach((i) => (i.value = ""));
+      });
 
-      console.log("Form cleared and image reset to professional headshot.");
+      // Prune Links to 1 empty row
+      const links = document.querySelectorAll(".link-entry");
+      links.forEach((l, index) => {
+        if (index > 0) l.remove();
+        else l.querySelectorAll("input").forEach((i) => (i.value = ""));
+      });
+
+      // Reset image preview
+      const previewImg = document.querySelector("#intro-form img");
+      if (previewImg) previewImg.src = DEFAULT_IMG;
     };
   }
 
+  // --- 3. Submit Logic ---
   form.onsubmit = (e) => {
     e.preventDefault();
 
-    // Data Collection
     const firstName = getVal("first-name");
     const middleName = getVal("middle-name");
     const lastName = getVal("last-name");
-    const mascotAdj = getVal("mascot-adj");
-    const mascotAnimal = getVal("mascot-animal");
     const ackStatement = getVal("ack-statement");
     const ackDate = getVal("ack-date");
     const customCaption = getVal("caption");
@@ -52,14 +129,16 @@ document.addEventListener("DOMContentLoaded", () => {
       (lastName[0] || "")
     ).toUpperCase();
 
-    // Build Courses
+    // Build Course List
     let courseHTML = "<ul>";
     document.querySelectorAll(".course-entry").forEach((entry) => {
       const dept = entry.querySelector(".course-dept").value;
       const num = entry.querySelector(".course-num").value;
       const name = entry.querySelector(".course-name").value;
       const reason = entry.querySelector(".course-reason").value;
-      courseHTML += `<li><strong>${dept} ${num} - ${name}:</strong> ${reason}</li>`;
+      if (dept || num) {
+        courseHTML += `<li><strong>${dept} ${num} - ${name}:</strong> ${reason}</li>`;
+      }
     });
     courseHTML += "</ul>";
 
@@ -68,26 +147,26 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".link-entry").forEach((entry) => {
       const name = entry.querySelector(".link-name").value;
       const url = entry.querySelector(".link-url").value;
-      linkArray.push(`<a href="${url}" target="_blank">${name}</a>`);
+      if (name && url) {
+        linkArray.push(`<a href="${url}" target="_blank">${name}</a>`);
+      }
     });
 
-    // Handle Image for Output
     const imageInput = document.getElementById("user-image");
     const imageUrl =
       imageInput.files && imageInput.files[0]
         ? URL.createObjectURL(imageInput.files[0])
-        : "images/myprofessionalheadshot.png";
+        : DEFAULT_IMG;
 
-    // --- 2. Render Output ---
     outputContainer.innerHTML = `
             <p style="text-align: center; font-weight: bold; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 20px;">
                 ${ackStatement} - ${initials} - ${ackDate}
             </p>
 
-            <h2 style="text-align: center;">${firstName} ${middleName ? middleName + " " : ""}${lastName}'s ${mascotAdj} ${mascotAnimal} | ITIS3135</h2>
+            <h2 style="text-align: center;">${firstName} ${middleName ? middleName + " " : ""}${lastName}'s ${getVal("mascot-adj")} ${getVal("mascot-animal")}</h2>
             
             <figure style="text-align: center;">
-                <img src="${imageUrl}" alt="${firstName}'s Photo" style="max-width: 300px; border-radius: 10px;">
+                <img src="${imageUrl}" alt="Profile Photo" style="max-width: 300px; border-radius: 10px;">
                 <figcaption>${customCaption}</figcaption> 
             </figure>
 
@@ -96,16 +175,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 <li><strong>Personal Background:</strong> ${getVal("personal-bg")}</li>
                 <li><strong>Professional Background:</strong> ${getVal("professional-bg")}</li>
                 <li><strong>Academic Background:</strong> ${getVal("academic-bg")}</li>
-                <li><strong>Background in this Subject:</strong> ${getVal("subject-bg")}</li>
-                <li><strong>Primary Computer Platform:</strong> ${getVal("computer-bg")}</li>
                 <li><strong>Courses:</strong> ${courseHTML}</li>
-                ${getVal("funny-item") ? `<li><strong>Funny/Interesting item:</strong> ${getVal("funny-item")}</li>` : ""}
-                ${getVal("share-item") ? `<li><strong>Also like to share:</strong> ${getVal("share-item")}</li>` : ""}
             </ul>
 
             <p style="text-align: center; font-style: italic; margin-top: 20px;">"${getVal("quote")}" — ${getVal("quote-author")}</p>
             
-            <div id="output-links" style="text-align: center; margin-top: 20px; font-weight: bold;">
+            <div style="text-align: center; margin-top: 20px; font-weight: bold;">
                 ${linkArray.join(" | ")}
             </div>
 
@@ -119,12 +194,8 @@ document.addEventListener("DOMContentLoaded", () => {
     formSubtitle.style.display = "none";
     outputContainer.style.display = "block";
 
-    // --- 3. Reset Button Logic ---
-    const resetBtn = document.getElementById("reset-page-btn");
-    if (resetBtn) {
-      resetBtn.onclick = () => {
-        window.location.reload();
-      };
-    }
+    document.getElementById("reset-page-btn").onclick = () => {
+      window.location.reload();
+    };
   };
 });
