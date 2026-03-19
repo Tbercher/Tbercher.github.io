@@ -61,9 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const rawHtmlCode = `<!DOCTYPE html>
 <html lang="en">
 <body>
-    <p style="text-align: center; font-weight: bold;">
-        ${ackStatement} - ${initials} - ${ackDate}
-    </p>
 
     <header>
         <h1>${firstName} ${middleName ? middleName + " " : ""}${lastName}'s ${mascotAdj} ${mascotAnimal}</h1>
@@ -73,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <img src="${getVal("default-image")}" alt="${firstName}">
             <figcaption>${customCaption}</figcaption> 
         </figure>
+        <p>${getVal("personal-state")}</p>
         <ul>
             ${getVal("nickname") ? `<li><strong>Nickname:</strong> ${getVal("nickname")}</li>` : ""}
             <li><strong>Personal Background:</strong> ${getVal("personal-bg")}</li>

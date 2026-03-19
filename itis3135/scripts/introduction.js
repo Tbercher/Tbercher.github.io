@@ -110,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const customCaption = getVal("caption");
 
     // Backgrounds
+    const personalSt = getVal("personal-state");
     const personalBg = getVal("personal-bg");
     const professionalBg = getVal("professional-bg");
     const academicBg = getVal("academic-bg");
@@ -155,9 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
         : DEFAULT_IMG;
 
     outputContainer.innerHTML = `
-            <p style="text-align: center; font-weight: bold; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 20px;">
-                ${ackStatement} - ${initials} - ${ackDate}
-            </p>
+            
 
             <h2 style="text-align: center;">${headerTitle}</h2>
             
@@ -165,6 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <img src="${imageUrl}" alt="Profile Photo" style="max-width: 300px; border-radius: 10px;">
                 <figcaption>${customCaption}</figcaption> 
             </figure>
+            <p>${personalSt}</p>
             <ul style="list-style: none; padding: 0;">
             <li><h3>Background & Interests</h3></li>
                 <li><strong>\u2022Personal Background:</strong> ${personalBg}</li>

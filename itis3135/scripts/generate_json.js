@@ -52,11 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 2. Build the JSON Object
     const introData = {
-      acknowledgement: {
-        statement: getVal("ack-statement"),
-        initials: initials,
-        date: getVal("ack-date")
-      },
       personalInfo: {
         firstName: firstName,
         middleName: middleName || null,
@@ -66,7 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       imageContent: {
         imagePath: imageUrl,
-        caption: getVal("caption")
+        caption: getVal("caption"),
+        statement: getVal("personal-state")
       },
       background: {
         personal: getVal("personal-bg"),
