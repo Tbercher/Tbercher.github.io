@@ -1,139 +1,132 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const generateHtmlBtn = document.getElementById("generate-html-btn");
-  const formElement = document.getElementById("intro-form");
+document.addEventListener("DOMContentLoaded", () => {
+  const genHtmlBtn = document.getElementById("generate-html-btn");
+  const form = document.getElementById("intro-form");
+  const outputContainer = document.getElementById("output-container");
+  const pageTitle = document.getElementById("page-title");
+  const formSubtitle = document.getElementById("form-subtitle");
 
-  generateHtmlBtn.addEventListener("click", () => {
-    // 1. Validate the form before generating
-    if (!formElement.checkValidity()) {
-      formElement.reportValidity();
+  // Helper to safely get values and avoid "null" crashes
+  const getVal = (id) => {
+    const el = document.getElementById(id);
+    return el ? el.value.trim() : "";
+  };
+
+  // Helper to prevent HTML tags from rendering as actual elements in the code block
+  const escapeHtml = (text) => {
+    return text
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  };
+
+  genHtmlBtn.onclick = () => {
+    // Validate form before generating
+    if (!form.checkValidity()) {
+      form.reportValidity();
       return;
     }
 
-    // 2. Gather Personal Data
-    const firstName = document.getElementById("first-name").value;
-    const lastName = document.getElementById("last-name").value;
-    const nickname = document.getElementById("nickname").value;
-    const mascotAdj = document.getElementById("mascot-adj").value;
-    const mascotAnimal = document.getElementById("mascot-animal").value;
-    const divider = document.getElementById("divider").value;
+    // 1. Collect Personal Data
+    const firstName = getVal("first-name");
+    const middleName = getVal("middle-name");
+    const lastName = getVal("last-name");
+    const nickname = getVal("nickname");
+    const mascotAdj = getVal("mascot-adj");
+    const mascotAnimal = getVal("mascot-animal");
 
-    const fullName = nickname
-      ? `${firstName} "${nickname}" ${lastName}`
-      : `${firstName} ${lastName}`;
+    const initials = (
+      (firstName[0] || "") +
+      (middleName[0] || "") +
+      (lastName[0] || "")
+    ).toUpperCase();
 
-    // Note: For a downloaded HTML file, a locally uploaded blob URL will break once the browser closes.
-    // We will use the default relative image path to ensure it works in your project folder.
-    const defaultImage = document.getElementById("default-image").value;
-    const caption = document.getElementById("caption").value;
-
-    // 3. Gather Backgrounds & Extras
-    const personalBg = document.getElementById("personal-bg").value;
-    const professionalBg = document.getElementById("professional-bg").value;
-    const academicBg = document.getElementById("academic-bg").value;
-    const subjectBg = document.getElementById("subject-bg").value;
-    const computerBg = document.getElementById("computer-bg").value;
-    const funnyItem = document.getElementById("funny-item").value;
-    const shareItem = document.getElementById("share-item").value;
-    const quote = document.getElementById("quote").value;
-    const quoteAuthor = document.getElementById("quote-author").value;
-
-    // 4. Map Courses
-    let coursesList = "<ul>\n";
+    // 2. Build Course List String
+    let coursesLi = "";
     document.querySelectorAll(".course-entry").forEach((entry) => {
       const dept = entry.querySelector(".course-dept").value;
       const num = entry.querySelector(".course-num").value;
       const name = entry.querySelector(".course-name").value;
       const reason = entry.querySelector(".course-reason").value;
-      coursesList += `        <li><strong>${dept} ${num} - ${name}:</strong> ${reason}</li>\n`;
+      coursesLi += `            <li><strong>${dept} ${num} - ${name}:</strong> ${reason}</li>\n`;
     });
-    coursesList += "      </ul>";
 
-    // 5. Map Links
-    let linksList = "<ul>\n";
+    // 3. Build Links String
+    const linkArray = [];
     document.querySelectorAll(".link-entry").forEach((entry) => {
       const name = entry.querySelector(".link-name").value;
       const url = entry.querySelector(".link-url").value;
-      linksList += `        <li><a href="${url}" target="_blank" rel="noopener noreferrer">${name}</a></li>\n`;
+      linkArray.push(`<a href="${url}" target="_blank">${name}</a>`);
     });
-    linksList += "      </ul>";
+    const linksHtml = linkArray.join(" | ");
 
-    // 6. Construct the complete HTML string
-    const htmlTemplate = `<!DOCTYPE html>
+    // 4. Construct the Final Template String
+    const rawHtmlCode = `<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>${firstName} ${lastName}'s ${mascotAdj} ${mascotAnimal} | Introduction</title>
-    <style>
-      body {
-        font-family: 'Lato', sans-serif;
-        line-height: 1.6;
-        color: #333;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-      }
-      figure { text-align: center; margin: 2rem 0; }
-      img { max-width: 300px; border-radius: 8px; }
-      blockquote {
-        border-left: 4px solid #ccc;
-        padding-left: 1rem;
-        font-style: italic;
-        margin-top: 2rem;
-        color: #555;
-      }
-    </style>
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <title>${firstName} ${lastName} | Introduction</title>
+</head>
+<body>
     <header>
-      <h2>${fullName} ${divider} ${mascotAdj} ${mascotAnimal}</h2>
+        <h1>${firstName} ${middleName ? middleName + " " : ""}${lastName}'s ${mascotAdj} ${mascotAnimal}</h1>
     </header>
-    
     <main>
-      <figure>
-        <img src="${defaultImage}" alt="Profile picture for ${firstName}" />
-        <figcaption><em>${caption}</em></figcaption>
-      </figure>
-
-      <section>
+        <figure>
+            <img src="${getVal("default-image")}" alt="${firstName}">
+            <figcaption>${firstName} ${lastName} (${initials})</figcaption>
+        </figure>
         <ul>
-          <li><strong>Personal Background:</strong> ${personalBg}</li>
-          <li><strong>Professional Background:</strong> ${professionalBg}</li>
-          <li><strong>Academic Background:</strong> ${academicBg}</li>
-          <li><strong>Background in this Subject:</strong> ${subjectBg}</li>
-          <li><strong>Primary Computer Platform:</strong> ${computerBg}</li>
-          ${funnyItem ? `<li><strong>Funny/Interesting Item:</strong> ${funnyItem}</li>` : ""}
-          ${shareItem ? `<li><strong>Also Sharing:</strong> ${shareItem}</li>` : ""}
+            ${nickname ? `<li><strong>Nickname:</strong> ${nickname}</li>` : ""}
+            <li><strong>Personal Background:</strong> ${getVal("personal-bg")}</li>
+            <li><strong>Professional Background:</strong> ${getVal("professional-bg")}</li>
+            <li><strong>Academic Background:</strong> ${getVal("academic-bg")}</li>
+            <li><strong>Subject Background:</strong> ${getVal("subject-bg")}</li>
+            <li><strong>Computer Platform:</strong> ${getVal("computer-bg")}</li>
+            <li><strong>Courses:</strong>
+                <ul>
+${coursesLi.trimEnd()}
+                </ul>
+            </li>
+            ${getVal("funny-item") ? `<li><strong>Funny Item:</strong> ${getVal("funny-item")}</li>` : ""}
+            ${getVal("share-item") ? `<li><strong>Shared Item:</strong> ${getVal("share-item")}</li>` : ""}
         </ul>
-      </section>
-
-      <section>
-        <h3>Courses I'm Taking</h3>
-${coursesList}
-      </section>
-
-      <section>
-        <h3>My Links</h3>
-${linksList}
-      </section>
-
-      <blockquote>
-        "${quote}" <br><strong>— ${quoteAuthor}</strong>
-      </blockquote>
+        <p><em>"${getVal("quote")}"</em> — ${getVal("quote-author")}</p>
+        <nav>
+            ${linksHtml}
+        </nav>
     </main>
-  </body>
+</body>
 </html>`;
 
-    // 7. Create a Blob and trigger the download
-    const blob = new Blob([htmlTemplate], { type: "text/html" });
-    const link = document.createElement("a");
+    // 5. Update UI for the "Generation" View
+    pageTitle.innerText = "Introduction HTML";
+    form.style.display = "none";
+    formSubtitle.style.display = "none";
 
-    link.href = URL.createObjectURL(blob);
-    link.download = "introduction.html";
+    outputContainer.innerHTML = `
+            <section>
+                <h3>Formatted HTML Source Code:</h3>
+                <pre><code class="language-html">${escapeHtml(rawHtmlCode)}</code></pre>
+                <div style="text-align: center; margin-top: 20px;">
+                    <button type="button" id="back-to-form-btn">Back to Form</button>
+                </div>
+            </section>
+        `;
+    outputContainer.style.display = "block";
 
-    // Append, click, and clean up
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  });
+    // 6. Apply Highlight.js coloring
+    if (typeof hljs !== "undefined") {
+      hljs.highlightAll();
+    }
+
+    // 7. Back Button logic
+    document.getElementById("back-to-form-btn").onclick = () => {
+      outputContainer.style.display = "none";
+      form.style.display = "block";
+      pageTitle.innerText = "Introduction Form";
+      formSubtitle.style.display = "block";
+    };
+  };
 });
