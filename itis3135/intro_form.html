@@ -1,0 +1,482 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      Trevor Bercher's Tenacious Bear | ITIS3135 | Introduction Form
+    </title>
+
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="styles/intro_form.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <h1>Trevor Bercher's Tenacious Bear | ITIS3135 | Introduction Form</h1>
+    </header>
+
+    <div data-include="components/header.html"></div>
+
+    <main>
+      <h2 id="page-title">Introduction Form</h2>
+
+      <h3 id="form-subtitle">Please submit the form below.</h3>
+
+      <form id="intro-form">
+        <fieldset>
+          <legend>Personal Information</legend>
+
+          <label
+            >First Name:
+
+            <input type="text" id="first-name" value="Trevor" required /></label
+          ><br />
+
+          <label
+            >Middle Name/Initial (Optional):
+
+            <input type="text" id="middle-name" value="J." /></label
+          ><br />
+
+          <label
+            >Nickname (Optional):
+
+            <input type="text" id="nickname" value="" /></label
+          ><br />
+
+          <label
+            >Last Name:
+
+            <input type="text" id="last-name" value="Bercher" required /></label
+          ><br />
+
+          <label
+            >Acknowledgment Statement:
+
+            <input
+              type="text"
+              id="ack-statement"
+              value="I understand that what I put here is publicly available on the web and I won’t put anything here I don’t want the public to see"
+              required /></label
+          ><br />
+
+          <label
+            >Acknowledgement Date(YYYY-MM-DD):
+
+            <input
+              type="text"
+              id="ack-date"
+              value="2026-01-12"
+              pattern="\d{4}-\d{2}-\d{2}"
+              placeholder="YYYY-MM-DD"
+              required /></label
+          ><br />
+
+          <label
+            >Mascot Adjective:
+
+            <input
+              type="text"
+              id="mascot-adj"
+              value="Tenacious"
+              required /></label
+          ><br />
+
+          <label
+            >Mascot Animal:
+
+            <input
+              type="text"
+              id="mascot-animal"
+              value="Bear"
+              required /></label
+          ><br />
+
+          <label
+            >Divider:
+
+            <input type="text" id="divider" value="|" required /></label
+          ><br />
+        </fieldset>
+
+        <fieldset>
+          <legend>Image & Content</legend>
+
+          <label
+            >Upload Picture:
+
+            <input type="file" id="user-image" accept="image/*" /></label
+          ><br />
+
+          <input
+            type="hidden"
+            id="default-image"
+            value="images/myprofessionalheadshot.png"
+          />
+
+          <label
+            >Picture Caption:
+
+            <input
+              type="text"
+              id="caption"
+              value="Trevor Bercher - Student at UNC Charlotte"
+              required /></label
+          ><br />
+
+          <label
+            >Personal Background:
+
+            <textarea id="personal-bg" required>
+I’m currently 25 years old and a student veteran, I like to play strategy games in my free time. Funny/Interesting item to remember me by: I had a job that required me to wear a safari hat. I’d also like to share: I lived in Australia for 6 months.</textarea
+            ></label
+          ><br />
+
+          <label
+            >Professional Background:
+
+            <textarea id="professional-bg" required>
+After my time in the military I’ve been working part time at Walmart while going to school.</textarea
+            ></label
+          ><br />
+
+          <label
+            >Academic Background:
+
+            <textarea id="academic-bg" required>
+I’m currently a senior at UNC Charlotte studying computer science with a focus in Information Technology. Before that I attended community college at Central Piedmont Community College.</textarea
+            ></label
+          ><br />
+
+          <label
+            >Subject Background:
+
+            <textarea id="subject-bg" required>
+I have little to no background in this subject and am excited to learn.</textarea
+            ></label
+          ><br />
+
+          <label
+            >Primary Computer:
+
+            <textarea id="computer-bg" required>
+I primarily use a custom desktop computer. Backup Work Computer & Location Plan: I will use my school laptop and go to the Atkins library to complete my tasks.</textarea
+            ></label
+          ><br />
+
+          <label
+            >(Optional)Funny/Interesting item to remember me by:
+
+            <input
+              type="text"
+              id="funny-item"
+              value="I had a job that required me to wear a safari hat."
+            /> </label
+          ><br />
+
+          <label
+            >(Optional)I’d also like to share:
+
+            <input
+              type="text"
+              id="share-item"
+              value="I lived in Australia for 6 months."
+            /> </label
+          ><br />
+        </fieldset>
+
+        <fieldset>
+          <legend>Courses</legend>
+
+          <div id="courses-container">
+            <div class="course-entry">
+              <input type="text" class="course-dept" value="ITIS" required />
+
+              <input type="text" class="course-num" value="3200" required />
+
+              <input
+                type="text"
+                class="course-name"
+                value="Intro to Info Security & Privacy"
+                required
+              />
+
+              <input
+                type="text"
+                class="course-reason"
+                value="Interesting class."
+                required
+              />
+
+              <button type="button" class="delete-course-btn">Delete</button>
+            </div>
+
+            <div class="course-entry">
+              <input type="text" class="course-dept" value="ITIS" required />
+
+              <input type="text" class="course-num" value="3135" required />
+
+              <input
+                type="text"
+                class="course-name"
+                value="Front-End App Development"
+                required
+              />
+
+              <input
+                type="text"
+                class="course-reason"
+                value="Required and interesting class."
+                required
+              />
+
+              <button type="button" class="delete-course-btn">Delete</button>
+            </div>
+
+            <div class="course-entry">
+              <input type="text" class="course-dept" value="ITIS" required />
+
+              <input type="text" class="course-num" value="3155" required />
+
+              <input
+                type="text"
+                class="course-name"
+                value="Software Engineering"
+                required
+              />
+
+              <input
+                type="text"
+                class="course-reason"
+                value="Required class I have to take to graduate on time."
+                required
+              />
+
+              <button type="button" class="delete-course-btn">Delete</button>
+            </div>
+
+            <div class="course-entry">
+              <input type="text" class="course-dept" value="ITIS" required />
+
+              <input type="text" class="course-num" value="3160" required />
+
+              <input
+                type="text"
+                class="course-name"
+                value="Database Design & Implementation"
+                required
+              />
+
+              <input
+                type="text"
+                class="course-reason"
+                value="Required course also learning SQL seemed interesting and useful."
+                required
+              />
+
+              <button type="button" class="delete-course-btn">Delete</button>
+            </div>
+
+            <div class="course-entry">
+              <input type="text" class="course-dept" value="STAT" required />
+
+              <input type="text" class="course-num" value="2223" required />
+
+              <input
+                type="text"
+                class="course-name"
+                value="Elements of Statistics II"
+                required
+              />
+
+              <input
+                type="text"
+                class="course-reason"
+                value="Required course."
+                required
+              />
+
+              <button type="button" class="delete-course-btn">Delete</button>
+            </div>
+          </div>
+
+          <button type="button" id="add-course-btn">Add Another Course</button>
+        </fieldset>
+
+        <fieldset>
+          <legend>Extras & Links</legend>
+
+          <label
+            >Quote:
+
+            <input
+              type="text"
+              id="quote"
+              value="The journey of a thousand miles begins with a single step"
+              required /></label
+          ><br />
+
+          <label
+            >Quote Author:
+
+            <input
+              type="text"
+              id="quote-author"
+              value="Lao Tzu"
+              required /></label
+          ><br />
+
+          <div id="links-container">
+            <div class="link-entry">
+              <label
+                >Link Name:
+
+                <input type="text" class="link-name" value="CLT Web" required
+              /></label>
+
+              <label
+                >URL:
+
+                <input
+                  type="url"
+                  class="link-url"
+                  value="https://webpages.charlotte.edu/tbercher/"
+                  required
+              /></label>
+
+              <button type="button" class="delete-link-btn">Delete</button>
+            </div>
+
+            <div class="link-entry">
+              <label
+                >Link Name:
+
+                <input type="text" class="link-name" value="GitHub.io" required
+              /></label>
+
+              <label
+                >URL:
+
+                <input
+                  type="url"
+                  class="link-url"
+                  value="https://tbercher.github.io"
+                  required
+              /></label>
+
+              <button type="button" class="delete-link-btn">Delete</button>
+            </div>
+
+            <div class="link-entry">
+              <label
+                >Link Name:
+
+                <input type="text" class="link-name" value="GitHub" required
+              /></label>
+
+              <label
+                >URL:
+
+                <input
+                  type="url"
+                  class="link-url"
+                  value="https://github.com/tbercher"
+                  required
+              /></label>
+
+              <button type="button" class="delete-link-btn">Delete</button>
+            </div>
+
+            <div class="link-entry">
+              <label
+                >Link Name:
+
+                <input
+                  type="text"
+                  class="link-name"
+                  value="freeCodeCamp"
+                  required
+              /></label>
+
+              <label
+                >URL:
+
+                <input
+                  type="url"
+                  class="link-url"
+                  value="https://www.freecodecamp.org/tbercher"
+                  required
+              /></label>
+
+              <button type="button" class="delete-link-btn">Delete</button>
+            </div>
+
+            <div class="link-entry">
+              <label
+                >Link Name:
+
+                <input type="text" class="link-name" value="LinkedIn" required
+              /></label>
+
+              <label
+                >URL:
+
+                <input
+                  type="url"
+                  class="link-url"
+                  value="https://www.linkedin.com/in/trevorbercher/"
+                  required
+              /></label>
+
+              <button type="button" class="delete-link-btn">Delete</button>
+            </div>
+          </div>
+
+          <button type="button" id="add-link-btn">Add Another Link</button>
+
+          <div class="form-controls">
+            <button type="submit" id="submit-btn">Submit</button>
+
+            <button type="reset" id="reset-btn">Reset</button>
+
+            <button type="button" id="clear-btn">Clear</button>
+
+            <button type="button" id="generate-html-btn">Generate HTML</button>
+
+            <button type="button" id="generate-json-btn">Generate JSON</button>
+          </div>
+        </fieldset>
+      </form>
+
+      <div id="output-container" style="display: none"></div>
+    </main>
+
+    <div data-include="components/footer.html"></div>
+
+    <script src="scripts/HTMLInclude.min.js"></script>
+
+    <script src="scripts/introduction.js"></script>
+
+    <!-----<script src="scripts/generate_html.js"></script>
+
+    <script src="scripts/generate_json.js"></script> ---->
+  </body>
+</html>

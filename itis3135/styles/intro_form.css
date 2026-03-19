@@ -1,0 +1,283 @@
+/* Import the requested fonts */
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+
+/* --- User Provided Base Styles --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Used to set the margins to 0 and maintain overall page background */
+body {
+  background-color: #f4f4f4;
+  margin: 0px;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* Used to set the max width and margin */
+main {
+  margin: 0 auto; /* Tweaked slightly to ensure perfect centering with max-width */
+  max-width: 900px;
+  width: 90%; /* Added a percentage width for mobile responsiveness */
+  flex-grow: 1;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+/* Used to center heading 1 text and change color and font */
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #363636;
+  font-family: "Libre Baskerville", "Times New Roman", serif;
+}
+
+/* Used to center heading 2 text and change color and font */
+h2,
+h3 {
+  color: #363636;
+  font-family: "Libre Baskerville", "Times New Roman", serif;
+  margin-bottom: 15px;
+}
+
+/* Used to center p text and change color and font */
+p {
+  color: #363636;
+  font-family: "Lato", "Times New Roman", sans-serif;
+  line-height: 1.6;
+}
+
+/* Set background color for navbar and decides the font also fixes the orientation */
+header nav ul {
+  list-style: none;
+  background-color: #363636;
+  font-family: "Lato", "Times New Roman", sans-serif;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+
+/* Used to change text color on the nav bar */
+header nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
+}
+
+/* When hovering over selectable items the elements color changes indicating selectability */
+header nav a:hover {
+  background-color: #000000;
+}
+
+header nav li {
+  float: left;
+}
+
+figcaption {
+  color: #363636;
+  font-family: "Lato", "Times New Roman", sans-serif;
+  font-weight: bold;
+  margin-top: 0px;
+}
+
+/* Same as navbar above but for the contact bar */
+ul {
+  color: #363636;
+  font-family: "Lato", "Times New Roman", sans-serif;
+}
+
+blockquote {
+  color: #363636;
+  font-family: "Lato", "Times New Roman", sans-serif;
+  font-style: italic;
+  border-left: 4px solid #363636;
+  padding-left: 15px;
+  margin: 20px 0;
+}
+
+footer nav {
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+
+footer nav ul {
+  list-style: none;
+  background-color: #363636;
+  font-family: "Lato", "Times New Roman", sans-serif;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+
+footer nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
+}
+
+footer nav a:hover {
+  background-color: #000000;
+}
+
+footer nav li {
+  float: left;
+}
+
+/* =========================================
+   --- Form Specific Styles --- 
+   ========================================= */
+
+form {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Soft shadow to lift it off the gray background */
+  font-family: "Lato", "Times New Roman", sans-serif;
+}
+
+fieldset {
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  background-color: #fafafa;
+}
+
+legend {
+  font-family: "Libre Baskerville", "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #363636;
+  padding: 0 10px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #363636;
+}
+.form-group {
+  margin-bottom: 1.5rem;
+}
+/* Inputs and Textareas */
+input[type="text"],
+input[type="url"],
+input[type="date"],
+textarea {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-family: "Lato", "Times New Roman", sans-serif;
+  font-size: 1rem;
+  background-color: #ffffff;
+}
+
+textarea {
+  resize: vertical; /* Allows user to resize vertically, but not horizontally */
+  min-height: 80px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #363636;
+  box-shadow: 0 0 5px rgba(54, 54, 54, 0.3);
+}
+
+/* Dynamic Rows (Courses and Links) */
+.course-entry,
+.link-entry {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+/* Overriding width for dynamic row inputs so they sit side-by-side */
+.course-entry input,
+.link-entry input {
+  flex: 1;
+  margin-top: 0;
+}
+
+/* Buttons */
+button {
+  background-color: #363636; /* Matches your header/footer */
+  color: #ffffff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Lato", "Times New Roman", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #000000;
+}
+
+/* Specific styling for delete buttons */
+.delete-course-btn,
+.delete-link-btn {
+  background-color: #d9534f; /* A soft red to indicate a destructive action */
+  margin-top: 0;
+}
+
+.delete-course-btn:hover,
+.delete-link-btn:hover {
+  background-color: #c9302c;
+}
+
+/* Bottom Form Controls Container */
+.form-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #eeeeee;
+}
+/* --- Link Styling to Match Theme --- */
+
+/* Standard links within the main content and output */
+main a {
+  color: #363636;
+  text-decoration: underline; /* Keeps them recognizable as links */
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/* Hover state matches your nav and button hover */
+main a:hover {
+  color: #000000;
+  text-decoration: none; /* Optional: removes underline on hover for a cleaner look */
+}
+
+/* Styling specifically for links inside your generated output list */
+#output-container ul li a {
+  font-family: "Lato", sans-serif;
+  display: inline-block;
+  padding: 2px 0;
+}
