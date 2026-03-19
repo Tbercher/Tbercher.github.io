@@ -9,10 +9,34 @@ document.addEventListener("DOMContentLoaded", () => {
     return el ? el.value.trim() : "";
   };
 
+  // --- 1. Clear Button Logic ---
+  const clearBtn = document.getElementById("clear-btn");
+  if (clearBtn) {
+    clearBtn.onclick = () => {
+      // Standard form reset
+      form.reset();
+
+      // Manually empty all inputs to ensure they are truly blank
+      form.querySelectorAll("input, textarea").forEach((input) => {
+        if (!["submit", "button"].includes(input.type)) {
+          input.value = "";
+        }
+      });
+
+      // FIX: Force the image preview back to your professional headshot
+      const previewImg = document.querySelector("#intro-form img");
+      if (previewImg) {
+        previewImg.src = "images/myprofessionalheadshot.png";
+      }
+
+      console.log("Form cleared and image reset to professional headshot.");
+    };
+  }
+
   form.onsubmit = (e) => {
     e.preventDefault();
 
-    // 1. Data Collection
+    // Data Collection
     const firstName = getVal("first-name");
     const middleName = getVal("middle-name");
     const lastName = getVal("last-name");
@@ -20,16 +44,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const mascotAnimal = getVal("mascot-animal");
     const ackStatement = getVal("ack-statement");
     const ackDate = getVal("ack-date");
-    const customCaption = getVal("caption"); // <--- Capturing your specific input
+    const customCaption = getVal("caption");
 
-    // 2. Generate Initials for the top acknowledgement line
     const initials = (
       (firstName[0] || "") +
       (middleName[0] || "") +
       (lastName[0] || "")
     ).toUpperCase();
 
-    // 3. Build Course List
+    // Build Courses
     let courseHTML = "<ul>";
     document.querySelectorAll(".course-entry").forEach((entry) => {
       const dept = entry.querySelector(".course-dept").value;
@@ -40,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     courseHTML += "</ul>";
 
-    // 4. Build Links
+    // Build Links
     const linkArray = [];
     document.querySelectorAll(".link-entry").forEach((entry) => {
       const name = entry.querySelector(".link-name").value;
@@ -48,14 +71,14 @@ document.addEventListener("DOMContentLoaded", () => {
       linkArray.push(`<a href="${url}" target="_blank">${name}</a>`);
     });
 
-    // 5. Handle Image
+    // Handle Image for Output
     const imageInput = document.getElementById("user-image");
-    const imageFile = imageInput.files ? imageInput.files[0] : null;
-    const imageUrl = imageFile
-      ? URL.createObjectURL(imageFile)
-      : getVal("default-image");
+    const imageUrl =
+      imageInput.files && imageInput.files[0]
+        ? URL.createObjectURL(imageInput.files[0])
+        : "images/myprofessionalheadshot.png";
 
-    // 6. Final Render
+    // --- 2. Render Output ---
     outputContainer.innerHTML = `
             <p style="text-align: center; font-weight: bold; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 20px;">
                 ${ackStatement} - ${initials} - ${ackDate}
@@ -96,8 +119,12 @@ document.addEventListener("DOMContentLoaded", () => {
     formSubtitle.style.display = "none";
     outputContainer.style.display = "block";
 
-    document.getElementById("reset-page-btn").onclick = () => {
-      location.reload();
-    };
+    // --- 3. Reset Button Logic ---
+    const resetBtn = document.getElementById("reset-page-btn");
+    if (resetBtn) {
+      resetBtn.onclick = () => {
+        window.location.reload();
+      };
+    }
   };
 });
