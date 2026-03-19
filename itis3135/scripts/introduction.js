@@ -165,17 +165,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 <img src="${imageUrl}" alt="Profile Photo" style="max-width: 300px; border-radius: 10px;">
                 <figcaption>${customCaption}</figcaption> 
             </figure>
-
             <ul style="list-style: none; padding: 0;">
-                
-                <li><strong>Personal Background:</strong> ${personalBg}</li>
-                <li><strong>Professional Background:</strong> ${professionalBg}</li>
-                <li><strong>Academic Background:</strong> ${academicBg}</li>
-                <li><strong>Subject Background:</strong> ${subjectBg}</li>
-                <li><strong>Primary Computer:</strong> ${computerBg}</li>
-                ${funnyItem ? `<li><strong>Funny/Interesting Item:</strong> ${funnyItem}</li>` : ""}
-                ${shareItem ? `<li><strong>I'd also like to share:</strong> ${shareItem}</li>` : ""}
-                <li><strong>Courses:</strong> ${courseHTML}</li>
+            <li><h3>Background & Interests</h3></li>
+                <li><strong>\u2022Personal Background:</strong> ${personalBg}</li>
+                <li><strong>\u2022Professional Background:</strong> ${professionalBg}</li>
+                <li><strong>\u2022Academic Background:</strong> ${academicBg}</li>
+                <li><strong>\u2022Subject Background:</strong> ${subjectBg}</li>
+                <li><strong>\u2022Primary Computer:</strong> ${computerBg}</li>
+                ${funnyItem ? `<li><strong>\u2022Funny/Interesting Item:</strong> ${funnyItem}</li>` : ""}
+                ${shareItem ? `<li><strong>\u2022I'd also like to share:</strong> ${shareItem}</li>` : ""}
+                <li><strong><h3>Courses:</h3></strong> ${courseHTML}</li>
             </ul>
 
             <p style="text-align: center; font-style: italic; margin-top: 20px;">"${getVal("quote")}" — ${getVal("quote-author")}</p>
