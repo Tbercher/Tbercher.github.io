@@ -76,6 +76,9 @@ figcaption {
   font-weight: bold;
   margin-top: 0px;
 }
+a {
+  color: #0056b3; /* Uses a hex code for a specific shade */
+}
 /*Same as navbar above but for the contact bar
 the contact bar is fixed to the bottom but besides that it is essentially the same as the nav bar*/
 ul {

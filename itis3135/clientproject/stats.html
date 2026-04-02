@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Stats | Taylor Elizabeth White</title>
+    <link rel="stylesheet" href="default.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="lookbook.html">Lookbook</a>
+        <a href="stats.html">Stats</a>
+        <a href="about.html">About</a>
+        <a href="dashboard.html">Casting</a>
+        <a href="booking.html">Book Now</a>
+      </nav>
+    </header>
+    <section>
+      <h2>SPECIFICATIONS</h2>
+      <button onclick="toggleUnits()">Toggle Imperial/Metric</button>
+      <table class="stats-table">
+        <tr>
+          <td>Height</td>
+          <td id="height">70 in</td>
+        </tr>
+        <tr>
+          <td>Bust</td>
+          <td id="bust">34 in</td>
+        </tr>
+      </table>
+      <button onclick="window.print()">PRINT COMP CARD</button>
+    </section>
+    <script>
+      let isMetric = false;
+      function toggleUnits() {
+        isMetric = !isMetric;
+        document.getElementById("height").innerText = isMetric
+          ? "178 cm"
+          : "70 in";
+      }
+    </script>
+  </body>
+</html>

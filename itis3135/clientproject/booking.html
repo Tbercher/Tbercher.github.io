@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Book Now | Taylor Elizabeth White</title>
+    <link rel="stylesheet" href="default.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="lookbook.html">Lookbook</a>
+        <a href="stats.html">Stats</a>
+        <a href="about.html">About</a>
+        <a href="dashboard.html">Casting</a>
+        <a href="booking.html">Book Now</a>
+      </nav>
+    </header>
+    <section>
+      <h2>BOOKING INQUIRY</h2>
+      <form
+        onsubmit="
+          event.preventDefault();
+          alert('Success!');
+        "
+      >
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" required />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" required />
+        </div>
+        <button type="submit">SUBMIT INQUIRY</button>
+      </form>
+    </section>
+  </body>
+</html>
