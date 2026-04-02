@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Used to set the margins to 0 and maintain overall page background */
+body {
+  background-color: #f4f4f4;
+  margin: 0px;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* Used to set the max width and margin */
+main {
+  margin: 0 auto;
+  max-width: 900px;
+  width: 60%;
+  flex-grow: 1;
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+}
+
+/* Updated H1 to remove excess bottom spacing */
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #363636;
+  font-family: "Libre Baskerville", "Times New Roman";
+}
+
+/* Used to center heading 2 text and change color and font */
+h2 {
+  color: #363636;
+  font-family: "Libre Baskerville", "Times New Roman";
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  color: #363636;
+  font-family: "Libre Baskerville", "Times New Roman";
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Improved spacing for body text */
+p {
+  color: #363636;
+  font-family: "Lato", "Times New Roman";
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+/* Set background color for navbar and decides the font also fixes the orientation */
+header nav ul {
+  list-style: none;
+  background-color: #363636;
+  font-family: "Lato", "Times New Roman";
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+
+/* Used to change text color on the nav bar */
+header nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
+}
+
+/* When hovering over selectable items the elements color changes indicating selectability */
+header nav a:hover {
+  background-color: #000000;
+}
+
+header nav li {
+  float: left;
+}
+
+/* Improved List Spacing */
+ul {
+  color: #363636;
+  font-family: "Lato", "Times New Roman";
+  margin-bottom: 1.5rem;
+  padding-left: 1.2rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+figcaption {
+  color: #363636;
+  font-family: "Lato", "Times New Roman";
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+a {
+  color: #0056b3;
+}
+
+blockquote {
+  color: #363636;
+  font-family: "Lato", "Times New Roman";
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid #363636;
+}
+
+/* Footer styles remain unchanged */
+footer nav {
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+
+footer nav ul {
+  list-style: none;
+  background-color: #363636;
+  font-family: "Lato", "Times New Roman";
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+
+footer nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
+}
+
+footer nav a:hover {
+  background-color: #000000;
+}
+
+footer nav li {
+  float: left;
+}
