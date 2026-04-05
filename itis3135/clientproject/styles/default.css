@@ -3,7 +3,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
-  color: #333;
+  color: #222;
 }
 
 header {
@@ -11,7 +11,7 @@ header {
   text-align: center;
   border-bottom: 1px solid #eee;
   background: #fff;
-  position: sticky;
+  position: stricky;
   top: 0;
   z-index: 1000;
 }
@@ -34,24 +34,30 @@ section {
 /* Home / Hero Section */
 .hero {
   height: 80vh;
-  background: #f4f4f4;
+  /* prettier-ignore */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/home_background.jpeg);
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
 
-.hero h1 {
+.hero-title {
   font-size: 3rem;
   letter-spacing: 5px;
   margin-bottom: 0.5rem;
+  color: #eee;
+}
+.hero-subtitle {
+  color: #eee;
 }
 
-/* Lookbook / Gallery Section */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
   margin-top: 2rem;
 }
 

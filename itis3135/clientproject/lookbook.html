@@ -2,42 +2,344 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Lookbook | Taylor Elizabeth White</title>
-    <link rel="stylesheet" href="default.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taylor Elizabeth White | Lookbook</title>
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles/lookbook.css" />
   </head>
   <body>
     <header>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="lookbook.html">Lookbook</a>
-        <a href="stats.html">Stats</a>
-        <a href="about.html">About</a>
-        <a href="dashboard.html">Casting</a>
-        <a href="booking.html">Book Now</a>
-      </nav>
+        <div data-include="components/header.html"></div>
+      
     </header>
-    <section>
-      <h2>THE LOOKBOOK</h2>
-      <div id="filters">
-        <button onclick="filterGallery('all')">All</button>
-        <button onclick="filterGallery('editorial')">Editorial</button>
-        <button onclick="filterGallery('commercial')">Commercial</button>
-      </div>
-      <div class="gallery-grid">
-        <div class="gallery-item editorial">Editorial Shoot A</div>
-        <div class="gallery-item commercial">Lifestyle Shoot B</div>
-      </div>
-    </section>
-    <script>
-      function filterGallery(category) {
-        const items = document.querySelectorAll(".gallery-item");
-        items.forEach((item) => {
-          item.style.display =
-            category === "all" || item.classList.contains(category)
-              ? "flex"
-              : "none";
-        });
-      }
-    </script>
+
+    <main>
+      <section id="lookbook">
+        <!-- Section Header -->
+        <div class="lookbook-header">
+          <h2 class="lookbook-title">The Lookbook</h2>
+        </div>
+
+        <!-- Filter Bar -->
+        <div
+          id="filters"
+          role="tablist"
+          aria-label="Filter gallery by category"
+        >
+          <button
+            class="filter-btn filter-btn--active"
+            data-category="all"
+            onclick="filterGallery('all')"
+            role="tab"
+            aria-selected="true"
+          >
+            All
+          </button>
+          <button
+            class="filter-btn"
+            data-category="editorial"
+            onclick="filterGallery('editorial')"
+            role="tab"
+            aria-selected="false"
+          >
+            Editorial
+          </button>
+          <button
+            class="filter-btn"
+            data-category="commercial"
+            onclick="filterGallery('commercial')"
+            role="tab"
+            aria-selected="false"
+          >
+            Commercial
+          </button>
+          <button
+            class="filter-btn"
+            data-category="swimwear"
+            onclick="filterGallery('swimwear')"
+            role="tab"
+            aria-selected="false"
+          >
+            Swimwear
+          </button>
+          <button
+            class="filter-btn"
+            data-category="freelance"
+            onclick="filterGallery('freelance')"
+            role="tab"
+            aria-selected="false"
+          >
+            Freelance
+          </button>
+
+          <!-- Animated active-state underline -->
+          <span id="filter-indicator" aria-hidden="true"></span>
+        </div>
+
+        <!-- Live count label -->
+        <span id="gallery-count" aria-live="polite"></span>
+
+        <!-- ── Gallery Grid ─────────────────────────────── -->
+        <div class="gallery-grid" id="gallery-grid">
+          <!-- EDITORIAL -->
+          <div
+            class="gallery-item gallery-item--hero"
+            data-category="editorial"
+            style="
+              background-image: url(&quot;images/editorial_1.jpeg&quot;);
+              background-size: cover;
+              background-position: center top;
+            "
+          >
+            <div class="gallery-badge">Editorial</div>
+            <div class="gallery-caption">
+              <p class="gallery-caption-title">The Midnight Muse in Emerald</p>
+              <span class="gallery-caption-cat">Editorial</span>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="editorial"
+            style="
+              background-image: url(&quot;images/editorial_2.jpeg&quot;);
+              background-size: cover;
+              background-position: center;
+            "
+          >
+            <div class="gallery-badge">Editorial</div>
+            <div class="gallery-caption">
+              <p class="gallery-caption-title">Woven Into the Wild</p>
+              <span class="gallery-caption-cat">Editorial</span>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="editorial"
+            style="
+              background-image: url(&quot;images/editorial_3.jpeg&quot;);
+              background-size: cover;
+              background-position: center;
+            "
+          >
+            <div class="gallery-badge">Editorial</div>
+            <div class="gallery-caption">
+              <p class="gallery-caption-title">Horned Star</p>
+              <span class="gallery-caption-cat">Editorial</span>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item gallery-item--wide"
+            data-category="editorial"
+            style="
+              background-image: url(&quot;images/editorial_4.jpeg&quot;);
+              background-size: cover;
+              background-position: center 30%;
+            "
+          >
+            <div class="gallery-badge">Editorial</div>
+            <div class="gallery-caption">
+              <p class="gallery-caption-title">Golden Hour Grace</p>
+              <span class="gallery-caption-cat">Editorial</span>
+            </div>
+          </div>
+
+          <!-- COMMERCIAL -->
+          <div
+            class="gallery-item gallery-item--tall"
+            data-category="commercial"
+            style="
+              background-image: url(&quot;images/commercial_01.jpeg&quot;);
+              background-size: cover;
+              background-position: center;
+            "
+          >
+            <div class="gallery-badge">Commercial</div>
+            <div class="gallery-caption">
+              <p class="gallery-caption-title">Neon Solstice</p>
+              <span class="gallery-caption-cat">Commercial</span>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="commercial"
+            style="
+              background-image: url(&quot;images/commercial_02.jpeg&quot;);
+              background-size: cover;
+              background-position: center top;
+            "
+          >
+            <div class="gallery-badge">Commercial</div>
+            <div class="gallery-caption">
+              <p class="gallery-caption-title">Twilight Silhouette</p>
+              <span class="gallery-caption-cat">Commercial</span>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="commercial"
+            style="
+              background-image: url(&quot;images/commercial_03.jpeg&quot;);
+              background-size: cover;
+              background-position: center;
+            "
+          >
+            <div class="gallery-badge">Commercial</div>
+            <div class="gallery-caption">
+              <p class="gallery-caption-title">The Gilded Garden</p>
+              <span class="gallery-caption-cat">Commercial</span>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="commercial"
+            style="
+              background-image: url(&quot;images/commercial_04.jpeg&quot;);
+              background-size: cover;
+              background-position: top center;
+            "
+          >
+            <div class="gallery-badge">Commercial</div>
+            <div class="gallery-caption">
+              <p class="gallery-caption-title">Imperial Sapphire</p>
+              <span class="gallery-caption-cat">Commercial</span>
+            </div>
+          </div>
+
+          <!-- SWIMWEAR -->
+          <div
+            class="gallery-item gallery-item--hero"
+            data-category="swimwear"
+            style="
+              background-image: url(&quot;images/swimwear_01.jpeg&quot;);
+              background-size: cover;
+              background-position: center top;
+            "
+          >
+            <div class="gallery-badge">Swimwear</div>
+            <div class="gallery-caption">
+              <p class="gallery-caption-title">Tropical Pop</p>
+              <span class="gallery-caption-cat">Swimwear</span>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="swimwear"
+            style="
+              background-image: url(&quot;images/swimwear_02.jpeg&quot;);
+              background-size: cover;
+              background-position: center;
+            "
+          >
+            <div class="gallery-badge">Swimwear</div>
+            <div class="gallery-caption">
+              <p class="gallery-caption-title">Amber Shores</p>
+              <span class="gallery-caption-cat">Swimwear</span>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="swimwear"
+            style="
+              background-image: url(&quot;images/swimwear_03.jpeg&quot;);
+              background-size: cover;
+              background-position: center top;
+            "
+          >
+            <div class="gallery-badge">Swimwear</div>
+            <div class="gallery-caption">
+              <p class="gallery-caption-title">Indigo Horizon</p>
+              <span class="gallery-caption-cat">Swimwear</span>
+            </div>
+          </div>
+
+          <!-- FREELANCE -->
+          <div
+            class="gallery-item gallery-item--wide"
+            data-category="freelance"
+            style="
+              background-image: url(&quot;images/freelance_01.jpeg&quot;);
+              background-size: cover;
+              background-position: center 25%;
+            "
+          >
+            <div class="gallery-badge">Freelance</div>
+            <div class="gallery-caption">
+              <p class="gallery-caption-title">Neon Underground</p>
+              <span class="gallery-caption-cat">Freelance</span>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item gallery-item--tall"
+            data-category="freelance"
+            style="
+              background-image: url(&quot;images/freelance_02.png&quot;);
+              background-size: cover;
+              background-position: center;
+            "
+          >
+            <div class="gallery-badge">Freelance</div>
+            <div class="gallery-caption">
+              <p class="gallery-caption-title">Cyber-Vinyl</p>
+              <span class="gallery-caption-cat">Freelance</span>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="freelance"
+            style="
+              background-image: url(&quot;images/freelance_03.jpeg&quot;);
+              background-size: cover;
+              background-position: center top;
+            "
+          >
+            <div class="gallery-badge">Freelance</div>
+            <div class="gallery-caption">
+              <p class="gallery-caption-title">Dusk After Dark</p>
+              <span class="gallery-caption-cat">Freelance</span>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="freelance"
+            style="
+              background-image: url(&quot;images/freelance_04.jpeg&quot;);
+              background-size: cover;
+              background-position: center;
+            "
+          >
+            <div class="gallery-badge">Freelance</div>
+            <div class="gallery-caption">
+              <p class="gallery-caption-title">Subversion of the Rose</p>
+              <span class="gallery-caption-cat">Freelance</span>
+            </div>
+          </div>
+
+          <!-- Empty state (shown via JS if no results) -->
+          <p class="gallery-empty" id="gallery-empty" aria-live="polite">
+            No images found in this category.
+          </p>
+        </div>
+        <!-- /.gallery-grid -->
+      </section>
+    </main>
+
+    <div data-include="components/footer.html"></div>
+
+    <script src="scripts/HTMLInclude.min.js"></script>
+    <script src="scripts/lookbook.js"></script>
   </body>
 </html>

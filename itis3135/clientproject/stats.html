@@ -3,42 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <title>Stats | Taylor Elizabeth White</title>
-    <link rel="stylesheet" href="default.css" />
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles/default.css" />
   </head>
   <body>
     <header>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="lookbook.html">Lookbook</a>
-        <a href="stats.html">Stats</a>
-        <a href="about.html">About</a>
-        <a href="dashboard.html">Casting</a>
-        <a href="booking.html">Book Now</a>
-      </nav>
+      <div data-include="components/header.html"></div>
     </header>
-    <section>
-      <h2>SPECIFICATIONS</h2>
-      <button onclick="toggleUnits()">Toggle Imperial/Metric</button>
-      <table class="stats-table">
-        <tr>
-          <td>Height</td>
-          <td id="height">70 in</td>
-        </tr>
-        <tr>
-          <td>Bust</td>
-          <td id="bust">34 in</td>
-        </tr>
-      </table>
-      <button onclick="window.print()">PRINT COMP CARD</button>
-    </section>
-    <script>
-      let isMetric = false;
-      function toggleUnits() {
-        isMetric = !isMetric;
-        document.getElementById("height").innerText = isMetric
-          ? "178 cm"
-          : "70 in";
-      }
-    </script>
+    <main>
+      <section>
+        <h2>SPECIFICATIONS</h2>
+        <button onclick="toggleUnits()">Toggle Imperial/Metric</button>
+        <table class="stats-table">
+          <tr>
+            <td>Height</td>
+            <td id="height">70 in</td>
+          </tr>
+          <tr>
+            <td>Bust</td>
+            <td id="bust">34 in</td>
+          </tr>
+        </table>
+        <button onclick="window.print()">PRINT COMP CARD</button>
+      </section>
+    </main>
+    <div data-include="components/footer.html"></div>
+    <script src="scripts/HTMLInclude.min.js"></script>
   </body>
 </html>
