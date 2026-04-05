@@ -16,21 +16,44 @@
     <main>
       <section>
         <h2>SPECIFICATIONS</h2>
-        <button onclick="toggleUnits()">Toggle Imperial/Metric</button>
+        <button id="toggle-btn" onclick="toggleUnits()">
+          Switch to Metric / EU
+        </button>
         <table class="stats-table">
           <tr>
             <td>Height</td>
-            <td id="height">70 in</td>
+            <td id="height">6'0"</td>
           </tr>
           <tr>
-            <td>Bust</td>
-            <td id="bust">34 in</td>
+            <td>Weight</td>
+            <td id="weight">140 lbs</td>
+          </tr>
+          <tr>
+            <td>Chest</td>
+            <td id="chest">32 in</td>
+          </tr>
+          <tr>
+            <td>Waist</td>
+            <td id="waist">27 in</td>
+          </tr>
+          <tr>
+            <td>Hair</td>
+            <td id="hair">Sandy Brown</td>
+          </tr>
+          <tr>
+            <td>Eyes</td>
+            <td id="eyes">Brown</td>
+          </tr>
+          <tr>
+            <td>Shoes</td>
+            <td id="shoes">US 12</td>
           </tr>
         </table>
-        <button onclick="window.print()">PRINT COMP CARD</button>
+        <button onclick="downloadCompCard()">DOWNLOAD COMP CARD</button>
       </section>
     </main>
     <div data-include="components/footer.html"></div>
     <script src="scripts/HTMLInclude.min.js"></script>
+    <script src="scripts/stats.js"></script>
   </body>
 </html>
