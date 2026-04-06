@@ -4,7 +4,7 @@ const TALENT = {
   name: "Taylor Elizabeth",
   phone: "+1 (555) 867-5309",
   email: "taylorrelizabethh81@gmail.com",
-  title: "Talent | Actor & Model",
+  title: "Model",
   website: "www.taylorelizabeth.com",
   instagram: "@taylorelizabeth",
   agency: "Premier Talent Agency",
