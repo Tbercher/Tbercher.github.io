@@ -2,11 +2,11 @@
 // Contact information — update these values as needed
 const TALENT = {
   name: "Taylor Elizabeth",
-  phone: "+1 (555) 867-5309",
+  phone: "+1 (313) 315-4314",
   email: "taylorrelizabethh81@gmail.com",
   title: "Model",
   website: "www.taylorelizabeth.com",
-  instagram: "@taylorelizabeth",
+  instagram: "@taylorrelizabethh_",
   agency: "Premier Talent Agency",
   agencyPhone: "+1 (555) 200-0100"
 };
