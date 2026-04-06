@@ -1,7 +1,7 @@
 /* ─────────────────────────────────────────
    EmailJS Initialisation
-   Replace the two placeholder strings below
-   with your actual EmailJS credentials.
+   Replace the placeholders below with your
+   actual EmailJS credentials.
    Sign up free at https://www.emailjs.com
 ───────────────────────────────────────── */
 const EMAILJS_PUBLIC_KEY = "OJjX9syaAXvdXImuy"; // e.g. "user_xxxxxxxxxxxxxxxx"
@@ -12,7 +12,6 @@ emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
 /* ─── Validation helpers ─── */
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-// Accepts common phone formats; empty string is valid (field is optional)
 const PHONE_RE = /^[\d\s().+\-]{7,20}$/;
 
 function setFieldState(input, msgEl, isValid, message) {
@@ -58,7 +57,6 @@ function validatePhone() {
   const msg = document.getElementById("phoneMsg");
   const val = el.value.trim();
   if (val === "") {
-    // Optional – clear any previous state
     clearFieldState(el, msg);
     return true;
   }
@@ -86,6 +84,33 @@ function validateInquiry() {
   return true;
 }
 
+/* ─── Clear all fields and validation states ─── */
+function resetForm() {
+  document.getElementById("name").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("phone").value = "";
+  document.getElementById("comments").value = "";
+  document.getElementById("inquiryType").selectedIndex = 0;
+
+  clearFieldState(
+    document.getElementById("name"),
+    document.getElementById("nameMsg")
+  );
+  clearFieldState(
+    document.getElementById("email"),
+    document.getElementById("emailMsg")
+  );
+  clearFieldState(
+    document.getElementById("phone"),
+    document.getElementById("phoneMsg")
+  );
+  clearFieldState(
+    document.getElementById("inquiryType"),
+    document.getElementById("inquiryMsg")
+  );
+  document.getElementById("comments").classList.remove("valid", "invalid");
+}
+
 /* ─── Attach real-time listeners ─── */
 document.getElementById("name").addEventListener("input", validateName);
 document.getElementById("email").addEventListener("input", validateEmail);
@@ -93,80 +118,53 @@ document.getElementById("phone").addEventListener("input", validatePhone);
 document
   .getElementById("inquiryType")
   .addEventListener("change", validateInquiry);
-
-/* Also validate on blur for fields the user tabs past without typing */
 document.getElementById("name").addEventListener("blur", validateName);
 document.getElementById("email").addEventListener("blur", validateEmail);
 document.getElementById("phone").addEventListener("blur", validatePhone);
 
 /* ─── Form submission ─── */
-document
-  .getElementById("bookingForm")
-  .addEventListener("submit", async function (e) {
-    e.preventDefault();
+document.getElementById("bookingForm").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    // Run all validators; collect results
-    const allValid = [
-      validateName(),
-      validateEmail(),
-      validatePhone(),
-      validateInquiry()
-    ].every(Boolean);
+  const allValid = [
+    validateName(),
+    validateEmail(),
+    validatePhone(),
+    validateInquiry()
+  ].every(Boolean);
 
-    if (!allValid) return;
+  if (!allValid) return;
 
-    const btn = document.getElementById("submitBtn");
-    const status = document.getElementById("formStatus");
+  const btn = document.getElementById("submitBtn");
+  const status = document.getElementById("formStatus");
 
-    btn.disabled = true;
-    btn.textContent = "Sending…";
-    status.className = "";
-    status.style.display = "none";
+  btn.disabled = true;
+  btn.textContent = "Sending…";
 
-    // Build the template params that match your EmailJS template variables
-    const templateParams = {
-      name: document.getElementById("name").value.trim(),
-      email: document.getElementById("email").value.trim(),
-      phone: document.getElementById("phone").value.trim() || "Not provided",
-      inquiryType: document.getElementById("inquiryType").value,
-      comments: document.getElementById("comments").value.trim() || "None"
-    };
+  const templateParams = {
+    fromName: document.getElementById("name").value.trim(),
+    fromEmail: document.getElementById("email").value.trim(),
+    phoneNumber:
+      document.getElementById("phone").value.trim() || "Not provided",
+    inquiryType: document.getElementById("inquiryType").value,
+    comments: document.getElementById("comments").value.trim() || "None"
+  };
 
-    try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        templateParams
-      );
+  // Clear the form and show success immediately
+  resetForm();
+  status.textContent = "Your inquiry has been sent! I'll be in touch soon.";
+  status.className = "success";
+  status.style.display = "block";
+  btn.disabled = false;
+  btn.textContent = "SUBMIT INQUIRY";
 
-      status.textContent = "Your inquiry has been sent! I'll be in touch soon.";
-      status.className = "success";
-      this.reset();
-
-      // Force select back to the blank placeholder
-      document.getElementById("inquiryType").selectedIndex = 0;
-
-      // Clear visual states for all fields
-      const fieldMap = {
-        name: "nameMsg",
-        email: "emailMsg",
-        phone: "phoneMsg",
-        inquiryType: "inquiryMsg",
-        comments: null
-      };
-      Object.entries(fieldMap).forEach(([id, msgId]) => {
-        const el = document.getElementById(id);
-        const msg = msgId ? document.getElementById(msgId) : null;
-        if (msg) clearFieldState(el, msg);
-        else el.classList.remove("valid", "invalid");
-      });
-    } catch (err) {
+  // Send the email in the background; flag if it fails
+  emailjs
+    .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+    .catch(function (err) {
       console.error("EmailJS error:", err);
       status.textContent =
-        "Something went wrong. Please try again or reach out directly.";
+        "Form submitted, but the email failed to send. Please reach out directly.";
       status.className = "error";
-    } finally {
-      btn.disabled = false;
-      btn.textContent = "SUBMIT INQUIRY";
-    }
-  });
+    });
+});

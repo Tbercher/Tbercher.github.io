@@ -51,7 +51,7 @@
 .optional-badge {
   font-size: 0.7rem;
   font-weight: 400;
-  color: #383838;
+  color: #aaa;
   margin-left: 6px;
   letter-spacing: 0.04em;
 }
@@ -78,14 +78,12 @@
 }
 
 #formStatus.success {
-  display: block;
   background: #e8f5e9;
   color: #2e7d32;
   border: 1px solid #a5d6a7;
 }
 
 #formStatus.error {
-  display: block;
   background: #ffebee;
   color: #c62828;
   border: 1px solid #ef9a9a;
