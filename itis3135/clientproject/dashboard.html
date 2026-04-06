@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Taylor Elizabeth White | Casting</title>
+    <title>Taylor Elizabeth | Casting</title>
     <script
       src="https://lint.page/kit/4d0fe3.js"
       crossorigin="anonymous"
@@ -17,15 +17,18 @@
     <main>
       <section>
         <h2>CASTING DASHBOARD</h2>
-        <button onclick="alert('Downloading...')">
-          DOWNLOAD PORTFOLIO (PDF)
-        </button>
-        <button onclick="alert('V-Card Generated')">SAVE TO CONTACTS</button>
+
+        <button onclick="downloadPortfolio()">DOWNLOAD COMP CARD</button>
+
+        <button onclick="saveToContacts()">SAVE TO CONTACTS</button>
       </section>
     </main>
+
     <footer>
       <div data-include="components/footer.html"></div>
     </footer>
+
     <script src="scripts/HTMLInclude.min.js"></script>
+    <script src="scripts/dashboard.js"></script>
   </body>
 </html>

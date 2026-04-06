@@ -153,3 +153,14 @@ button:hover {
     padding: 0;
   }
 }
+
+nav {
+  background: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  /* copy whatever styles your button element already has */
+}
