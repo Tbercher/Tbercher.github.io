@@ -4,9 +4,9 @@
    with your actual EmailJS credentials.
    Sign up free at https://www.emailjs.com
 ───────────────────────────────────────── */
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY"; // e.g. "user_xxxxxxxxxxxxxxxx"
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID"; // e.g. "service_abc123"
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // e.g. "template_xyz789"
+const EMAILJS_PUBLIC_KEY = "OJjX9syaAXvdXImuy"; // e.g. "user_xxxxxxxxxxxxxxxx"
+const EMAILJS_SERVICE_ID = "service_jgc3vus"; // e.g. "service_abc123"
+const EMAILJS_TEMPLATE_ID = "template_6xthlzd"; // e.g. "template_xyz789"
 
 emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
@@ -125,10 +125,9 @@ document
 
     // Build the template params that match your EmailJS template variables
     const templateParams = {
-      fromName: document.getElementById("name").value.trim(),
-      fromEmail: document.getElementById("email").value.trim(),
-      phoneNumber:
-        document.getElementById("phone").value.trim() || "Not provided",
+      name: document.getElementById("name").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      phone: document.getElementById("phone").value.trim() || "Not provided",
       inquiryType: document.getElementById("inquiryType").value,
       comments: document.getElementById("comments").value.trim() || "None"
     };
