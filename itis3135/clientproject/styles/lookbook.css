@@ -64,7 +64,7 @@ nav a {
   background: #333333;
   color: #ffffff;
 }
-.filter-btn--active {
+.filter-btn-active {
   background: #000000;
   color: #ffffff;
 }
@@ -93,7 +93,7 @@ nav a {
 }
 
 /* -- Gallery Grid ----------------------------------------- */
-.gallery-grid {
+.gallery-grd {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
@@ -115,12 +115,12 @@ nav a {
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.gallery-item--visible {
+.gallery-item-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.gallery-item--hidden {
+.gallery-item-hidden {
   display: none !important;
 }
 
@@ -218,13 +218,13 @@ nav a {
 
 /* -- Responsive ------------------------------------------- */
 @media (max-width: 900px) {
-  .gallery-grid {
+  .gallery-grd {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 640px) {
-  .gallery-grid {
+  .gallery-grd {
     grid-template-columns: repeat(2, 1fr);
   }
 
