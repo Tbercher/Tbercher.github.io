@@ -121,7 +121,7 @@ nav a {
 }
 
 .gallery-item-hidden {
-  display: none !important;
+  display: none;
 }
 
 /* -- Caption Overlay -------------------------------------- */
@@ -187,7 +187,7 @@ nav a {
   display: none;
 }
 
-.gallery-empty.visible {
+.gallery-empty .visible {
   display: block;
 }
 
@@ -248,7 +248,7 @@ nav a {
 
   .gallery-item {
     break-inside: avoid;
-    opacity: 1 !important;
-    transform: none !important;
+    opacity: 1;
+    transform: none;
   }
 }

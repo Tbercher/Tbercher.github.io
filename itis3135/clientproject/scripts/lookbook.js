@@ -5,9 +5,9 @@
  */
 
 (function () {
-  const ACTIVE_CLASS = "filter-btn--active";
-  const HIDDEN_CLASS = "gallery-item--hidden";
-  const VISIBLE_CLASS = "gallery-item--visible";
+  const ACTIVE_CLASS = "filter-btn-active";
+  const HIDDEN_CLASS = "gallery-item-hidden";
+  const VISIBLE_CLASS = "gallery-item-visible";
 
   // ─── Lightbox state ──────────────────────────────────────────────────────────
 
