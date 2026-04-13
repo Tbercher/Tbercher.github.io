@@ -14,6 +14,17 @@ header {
   top: 0;
   z-index: 1000;
 }
+footer {
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid #eee;
+  background: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  color: #000;
+  font-weight: bold;
+}
 
 nav a {
   margin: 0 15px;
