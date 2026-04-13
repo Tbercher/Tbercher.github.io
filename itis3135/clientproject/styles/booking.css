@@ -1,0 +1,96 @@
+/* ─── Booking Form Enhancement ─── */
+
+/* Real-time validation colours */
+.form-group input.valid,
+.form-group select.valid {
+  border-color: #4caf50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.15);
+}
+
+.form-group input.invalid,
+.form-group select.invalid {
+  border-color: #e53935;
+  box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.15);
+}
+
+/* Inline validation message */
+.field-msg {
+  display: block;
+  font-size: 0.78rem;
+  margin-top: 4px;
+  min-height: 1rem;
+  transition: opacity 0.2s ease;
+  opacity: 0;
+}
+
+.field-msg-ok {
+  opacity: 1;
+  color: #4caf50;
+}
+
+.field-msg-err {
+  opacity: 1;
+  color: #e53935;
+}
+
+/* Select styling so it inherits the same look as inputs */
+.form-group select {
+  width: 100%;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+/* Optional badge */
+.optional-badge {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #aaa;
+  margin-left: 6px;
+  letter-spacing: 0.04em;
+}
+
+/* Submit button feedback states */
+#submitBtn {
+  position: relative;
+  transition: opacity 0.2s;
+}
+
+#submitBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Toast / status banner */
+#formStatus {
+  display: none;
+  margin-top: 16px;
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+#formStatus.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+}
+
+#formStatus.error {
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+}
+
+/* Textarea inherits input styles from default.css; ensure resize is vertical only */
+#comments {
+  width: 100%;
+  resize: vertical;
+}
