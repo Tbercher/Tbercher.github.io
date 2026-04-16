@@ -204,7 +204,7 @@ nav a {
   text-align: center;
   width: 100%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 40px;
+  font-size: 36px;
   margin-bottom: 0; /* ← reduces gap below h1 */
 }
 
@@ -212,7 +212,7 @@ nav a {
   text-align: center;
   width: 100%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 40px;
+  font-size: 36px;
   margin-top: 0; /* ← removes gap above the header div */
 }
 
