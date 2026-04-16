@@ -29,6 +29,11 @@ footer {
 main {
   flex: 1;
 }
+figcaption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}
 
 nav a {
   margin: 0 15px;
