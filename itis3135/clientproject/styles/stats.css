@@ -1,4 +1,10 @@
 /* General Typography and Layout */
+h1,
+h2 {
+  display: inline;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 2em;
+}
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.6;
@@ -173,18 +179,4 @@ a:link {
 /* Visited link */
 a:visited {
   color: #000;
-}
-.bio-pic {
-  /* Ensures the image shrinks on small screens */
-  max-width: 100%;
-
-  /* Prevents the image from getting too massive on desktops */
-  width: 400px;
-
-  /* Keeps the proportions correct */
-  height: auto;
-
-  /* Centers the image and adds space below it */
-  display: block;
-  margin: 0 auto 24px auto;
 }

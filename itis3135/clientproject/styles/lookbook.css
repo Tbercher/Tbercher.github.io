@@ -200,12 +200,20 @@ nav a {
   padding-bottom: 1rem;
   border-bottom: 1px solid #eeeeee;
 }
+.lookbook-h1 {
+  text-align: center;
+  width: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 40px;
+  margin-bottom: 0; /* ← reduces gap below h1 */
+}
 
 .lookbook-title {
   text-align: center;
   width: 100%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 40px;
+  margin-top: 0; /* ← removes gap above the header div */
 }
 
 .lookbook-season {
@@ -251,4 +259,14 @@ nav a {
     opacity: 1;
     transform: none;
   }
+}
+/* Unvisited link */
+a:link {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Visited link */
+a:visited {
+  color: #000;
 }

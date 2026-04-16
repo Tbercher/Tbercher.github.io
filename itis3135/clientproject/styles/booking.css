@@ -1,6 +1,13 @@
 /* ─── Booking Form Enhancement ─── */
 
 /* Real-time validation colours */
+h1,
+h2 {
+  display: inline;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 2em;
+}
+
 .form-group input.valid,
 .form-group select.valid {
   border-color: #4caf50;
@@ -93,4 +100,14 @@
 #comments {
   width: 100%;
   resize: vertical;
+}
+/* Unvisited link */
+a:link {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Visited link */
+a:visited {
+  color: #000;
 }
